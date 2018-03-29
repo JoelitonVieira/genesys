@@ -21,10 +21,4 @@ $this->get('/', 'Site\SiteController@index')->name('home');
 Route::resource('sala', 'SalaController');
 
 
-
-
 Auth::routes();
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

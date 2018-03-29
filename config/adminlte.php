@@ -143,7 +143,7 @@ return [
                 ],
                 [
                     'text'        => 'Cadastro de Sala/Laboratório',
-                    'url'         => 'admin/sala',
+                    'url'         => 'sala',
                     'icon'        => 'globe',
                 ],
                 [
