@@ -128,17 +128,17 @@ return [
             'submenu' => [
                 [
                     'text'        => 'Cadastro de Professor',
-                    'url'         => 'admin/professor',
+                    'url'         => 'professor',
                     'icon'        => 'graduation-cap',
                 ],
                 [
                     'text'        => 'Cadastro de Turma',
-                    'url'         => 'admin/turma',
+                    'url'         => 'turma',
                     'icon'        => 'users',
                 ],
                 [
                     'text'        => 'Cadastro de Disciplina',
-                    'url'         => 'admin/disciplina',
+                    'url'         => 'disciplina',
                     'icon'        => 'bookmark',
                 ],
                 [
@@ -148,7 +148,7 @@ return [
                 ],
                 [
                     'text'        => 'Editar Existentes',
-                    'url'         => 'admin/editar',
+                    'url'         => 'editar',
                     'icon'        => 'edit',
                 ],
             ],
@@ -156,23 +156,23 @@ return [
         'ALOCAÇÃO',
         [
             'text'        => 'Gerar Alocação',
-            'url'         => 'admin/alocacao',
+            'url'         => 'alocacao',
             'icon'        => 'mouse-pointer',
         ],
         [
             'text'        => 'Gerar Relatório',
-            'url'         => 'admin/relatorio',
+            'url'         => 'relatorio',
             'icon'        => 'file',
         ],
         [
             'text' => 'Ajuda',
-            'url'  => 'admin/ajuda',
+            'url'  => 'ajuda',
             'icon' => 'question-circle'
 
         ],
         [
             'text' => 'Contato',
-            'url'  => 'admin/contato',
+            'url'  => 'contato',
             'icon' => 'address-book'
 
         ],

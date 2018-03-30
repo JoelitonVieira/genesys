@@ -4,24 +4,29 @@
 
 @section('content_header')
 
-    <h3 style="background-color:white;text-align:center;">Editar Existentes</h3><br/>
+    <h3 style="background-color:white;text-align:center;">EDITAR EXISTENTES</h3><br/>
 
 @stop
 
 @section('content')
-<div class="box">
+<div class="row">
+  <div class="col-md-12">
+  <div class="box">
 
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="name">Escolher:</label>
-      <input type="text" id="name">
+    <a class="btn btn-success" href="{{ route('sala.index') }}">Editar Sala</a>
+    <a class="btn btn-info" href="{{ route('disciplina.index') }}">Editar Dsiciplina</a>
+
+
     </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
+    </div>
+    </div>
 
-</div>
+
+
 @stop
 
 @section('js')
+
+
 
 @stop

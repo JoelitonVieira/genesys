@@ -15,6 +15,8 @@ class CreateSalasTable extends Migration
     {
         Schema::create('salas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('tipo');
+            $table->string('nome');
             $table->timestamps();
         });
     }
