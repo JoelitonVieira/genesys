@@ -17,7 +17,7 @@ return [
 
     'title_prefix' => '',
 
-    'title_postfix' => ' - Genesys',
+    'title_postfix' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,10 +30,10 @@ return [
     |
     */
 
-    'logo' => '<span style="color:black;background-color:#53E5B3;font-size:24px;"><b>GENE</b></span><span style="color:#53E5B3;background-color:black;font-size:24px;">SYS</span>',
+    
+    'logo' => '<span style="color:white;font-size:18px;"><b>Alocação de </b></span><span style="color:#36d56a;font-size:18px;">Salas</span>',
 
-    'logo_mini' => '<span style="color:black;background-color:#53E5B3"><b>G</b></span><span style="color:#53E5B3;background-color:black">S</span>',
-
+    'logo_mini' => '<span style="color:white;font-size:18px;"><b>A</b></span><span style="color:#36d56a;font-size:18px;">S</span>',
     /*
     |--------------------------------------------------------------------------
     | Skin Color
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'green-light',
+    'skin' => 'black',
 
     /*
     |--------------------------------------------------------------------------
