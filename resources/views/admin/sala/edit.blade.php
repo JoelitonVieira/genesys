@@ -26,9 +26,10 @@
           <div class="form-group">
             <label for="name">Tipo:</label>
             <select name="tipo">
-              <option value="Sala Comum" selected="return mySelection()">Sala Comum</option>
-              <option value="Laboratório" selected="true">Laboratório</option>
+              <option value="Sala Comum" selected="selected">Sala Comum</option>
+              <option value="Laboratório" id="laboratorio">Laboratório</option>
             </select>
+            <param value="{{$sala->tipo}}" id="teste">
           </div>
           <button type="submit" class="btn btn-primary waves-effect">Alterar</button>
         </div>
@@ -42,13 +43,10 @@
 
 @section('js')
 <script>
-  function mySelection()
+  if ( document.getElementById("teste").value == "Laboratório")
   {
-    if ({{$sala->tipo}} == "Laboratório" )
-    {
-      return false;
-    }
-    return true;
+    document.getElementById("laboratorio").selected = "true";
   }
 </script>
+
 @stop
