@@ -30,10 +30,10 @@ return [
     |
     */
 
-    'logo' => '<span style="color:black;background-color:#53E5B3;font-size:24px;"><b>GENE</b></span><span style="color:#53E5B3;background-color:black;font-size:24px;">SYS</span>',
+    
+    'logo' => '<span style="color:white;font-size:24px;"><b>GENE</b></span><span style="color:#36d56a;background-color:#141414;font-size:24px;">SYS</span>',
 
-    'logo_mini' => '<span style="color:black;background-color:#53E5B3"><b>G</b></span><span style="color:#53E5B3;background-color:black">S</span>',
-
+    'logo_mini' => '<img src="https://imgur.com/xQ8fqdn.png" style="width:45px;">',
     /*
     |--------------------------------------------------------------------------
     | Skin Color
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'green-light',
+    'skin' => 'black',
 
     /*
     |--------------------------------------------------------------------------
