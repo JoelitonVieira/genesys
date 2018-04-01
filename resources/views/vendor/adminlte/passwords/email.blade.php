@@ -8,9 +8,10 @@
 @section('body_class', 'login-page')
 
 @section('body')
+<br><br><br><br>
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">Recuperação</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
@@ -26,7 +27,7 @@
                 <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">
                     <input type="email" name="email" class="form-control" value="{{ $email or old('email') }}"
                            placeholder="{{ trans('adminlte::adminlte.email') }}">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback" style="background-color: #36d56a; color: white"></span>
                     @if ($errors->has('email'))
                         <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
@@ -34,7 +35,7 @@
                     @endif
                 </div>
                 <button type="submit"
-                        class="btn btn-primary btn-block btn-flat"
+                        class="btn btn-primary btn-block btn-flat" style="border:none;color: white; background-color: #36d56a;"
                 >{{ trans('adminlte::adminlte.send_password_reset_link') }}</button>
             </form>
         </div>

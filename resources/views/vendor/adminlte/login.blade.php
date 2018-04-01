@@ -9,11 +9,19 @@
 @section('body_class', 'login-page')
 
 @section('body')
-    <br><br><br><br>
-    <div class="login-logo">
-                <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}"><img src="https://imgur.com/eWig5zS.png" style="width: 110px; "></a>
+    <br><br><br><br><br><br>
+    <div class="login-logo" style="margin-bottom: 10px">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <b style="font-size: 20px;">Alocação de Salas &nbsp&nbsp&nbsp|&nbsp</b>
+                <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}"><img src="https://imgur.com/eWig5zS.png" style="width: 55px; "></a>
+            </div>
+        </div>
+         <hr style="width: 330px;">
     </div>
-    <div class="login-box" style="margin-top: 0px;">
+    
+    <div class="login-box" style="margin-top: -10px;">
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Entre para iniciar sua sessão</p><br>
