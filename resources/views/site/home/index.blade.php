@@ -21,14 +21,16 @@
             #box1{
                 height: 85vh;
                 color: white;
-                background: linear-gradient(to bottom right, #2ec25e, #42e778);
+                background:#1a1a1a;
+                background-image: url(https://imgur.com/d91zm7f.png);               
                 background-size: cover;
             }
             #box1 a{
                 color: white;
+
             }
             #box1 a:hover{
-                border-bottom: 2px solid white;
+                border-bottom: 2px solid #36d56a;
                 transition: 0.5s;
                 padding-bottom: 8px;
             }
@@ -41,7 +43,7 @@
                 color: black;
             }
             #box2 a:hover{
-                border-bottom: 2px solid black;
+                border-bottom: 2px solid #36d56a;
                 transition: 0.5s;
                 padding-bottom: 8px;
             }
@@ -84,13 +86,21 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            } 
+            #particles-js{
+                position: absolute;
+                width: 90%;
+                height: 90%;
             }
-            
+
         </style>
+
     </head>
     <body>
+
+    <div id="particles-js"></div>
     <center> 
-        <div id="box1">
+        <div id="box1">         
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -104,7 +114,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     <br><br>
-                    <b> Alocação de Salas</b>
+                    <b> Alocação de </b><b style="color:#36d56a;">Salas</b>
                 </div>
             </div>
         </div>
@@ -119,6 +129,9 @@
                             <a href="#" target="_blank"><i class="fab fa-github"></i>  Vitor</a>
                         </div>    
        </div> 
-    </center>                      
+    </center>   
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/demo/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </body>
 </html>

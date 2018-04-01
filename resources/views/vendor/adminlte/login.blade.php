@@ -18,7 +18,7 @@
                 <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}"><img src="https://imgur.com/eWig5zS.png" style="width: 55px; "></a>
             </div>
         </div>
-         <hr style="width: 340px;">
+         <hr style="width: 330px;">
     </div>
     
     <div class="login-box" style="margin-top: -10px;">
