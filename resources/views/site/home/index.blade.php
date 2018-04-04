@@ -12,7 +12,7 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         <!-- Styles -->
         <style>
-            html, body {               
+            html, body {
                 font-family: 'Roboto', sans-serif;
                 font-weight: 100;
                 margin: 0;
@@ -22,7 +22,7 @@
                 height: 85vh;
                 color: white;
                 background:#1a1a1a;
-                background-image: url(https://imgur.com/d91zm7f.png);               
+                background-image: url(https://imgur.com/d91zm7f.png);
                 background-size: cover;
             }
             #box1 a{
@@ -86,7 +86,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            } 
+            }
             #particles-js{
                 position: absolute;
                 width: 90%;
@@ -99,12 +99,12 @@
     <body>
 
     <div id="particles-js"></div>
-    <center> 
-        <div id="box1">         
+    <center>
+        <div id="box1">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/admin') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">> Acessar o Sistema < </a>
                     @endauth
@@ -120,16 +120,16 @@
         </div>
 
         <div id="box2">
-             <p><b>EQUIPE GENE</b><b style="color:#26b454;">SYS</b></p> 
+             <p><b>EQUIPE GENE</b><b style="color:#26b454;">SYS</b></p>
                         <div class="links">
                             <a href="https://github.com/Acetona19" target="_blank"><i class="fab fa-github"></i>  Caio</a>
                             <a href="https://github.com/JoelitonVieira" target="_blank"><i class="fab fa-github"></i>  Joeliton</a>
                             <a href="https://github.com/trndd" target="_blank"><i class="fab fa-github"></i>  Matheus</a>
                             <a href="#" target="_blank"><i class="fab fa-github"></i>  Patrick</a>
                             <a href="#" target="_blank"><i class="fab fa-github"></i>  Vitor</a>
-                        </div>    
-       </div> 
-    </center>   
+                        </div>
+       </div>
+    </center>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/demo/js/app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

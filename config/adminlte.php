@@ -30,10 +30,10 @@ return [
     |
     */
 
-    
-    'logo' => '<span style="color:white;font-size:18px;"><b>Alocação de </b></span><span style="color:#36d56a;font-size:18px;">Salas</span>',
 
-    'logo_mini' => '<span style="color:white;font-size:18px;"><b>A</b></span><span style="color:#36d56a;font-size:18px;">S</span>',
+    'logo' => '<span style="color:white;font-size:18px;"><b>Alocação de </b></span><span style="color:#36d56a;font-size:18px;"><b>Salas</b></span>',
+
+    'logo_mini' => '<img src="https://imgur.com/xQ8fqdn.png" style="width:45px;">',
     /*
     |--------------------------------------------------------------------------
     | Skin Color
