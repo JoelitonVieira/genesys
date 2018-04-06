@@ -36,7 +36,7 @@
               <option value="Laboratório">Laboratório</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary waves-effect">Salvar</button>
+          <button type="submit" class="btn btn-primary info">Salvar</button>
         </div>
       </form>
     </div>
@@ -50,13 +50,13 @@
         <h3>Salas Existentes</h3>
       </div>
       <div class="body table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-hover table-dark">
           <thead>
             <tr style="background-color:gray">
-              <th></th>
-              <th>NOME</th>
-              <th>TIPO</th>
-              <th width="28%" class="text-center">OPÇÕES</th>
+              <th  scope="col">#</th>
+              <th  scope="col">NOME</th>
+              <th scope="col">TIPO</th>
+              <th width="28%" class="text-center" scope="col">OPÇÕES</th>
             </tr>
           </thead>
           @foreach ($salas as $sala)
@@ -66,12 +66,15 @@
                 <td>{{ $sala->nome }}</td>
                 <td>{{ $sala->tipo }}</td>
                 <td class="text-center">
-                	<a class="btn btn-info waves-effect" href="{{ route('sala.edit', $sala) }}">EDITAR</a>
-                  <form style="display: inline;" action="{{ route('sala.destroy', $sala->id) }}" method="POST">
+                	<a class="btn btn-info waves-effect" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> EDITAR</a>
+                  <!--<form style="display: inline;" action="{{ route('sala.destroy', $sala->id) }}" method="POST">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-danger waves-effect" value="DELETAR" name="deletar">
-                  </form>
+                  </form>-->
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
+                  <i class="fa fa-close"></i> DELETAR
+                  </button>
               	</td>
               </tr>
             </tbody>
@@ -81,6 +84,30 @@
       </div>
     </div>
   </div>
+</div>
+<div class="modal fade" id="modal-danger">
+  <div class="modal-dialog" style="width:400px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title">Confirmação de exclusão</h2>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja excluir a sala selecionada?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Não</button>
+        <form style="display: inline;" action="{{ route('sala.destroy', $sala->id) }}" method="POST">
+          {{ method_field('DELETE') }}
+          {{ csrf_field() }}
+          <input type="submit" class="btn btn-info waves-effect" value="Deletar" name="deletar">
+        </form>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
 </div>
 @stop
 
