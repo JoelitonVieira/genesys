@@ -1,7 +1,7 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Home - GENESYS')
+@section('title', 'Home - destinatio')
 
 @section('content_header')
     <center>
