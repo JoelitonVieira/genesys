@@ -1,4 +1,3 @@
-
 @extends('adminlte::page')
 
 @section('title', 'Cadastro de Sala')
@@ -9,7 +8,6 @@
 @stop
 
 @section('content')
-
 @if ($message = Session::get('success'))
 <div class="alert bg-green alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -28,87 +26,17 @@
       {{ csrf_field() }}
         <div class="box-body">
           <div class="form-group">
-
-
-
-              <div class="imputWithIcon">
-
-                <style>
-                input[type=text]{
-                  width:20%;
-                  border:2px solid 	#000000;
-                  border-radius:4px;
-                  margin:8px 0;
-                  outline:none;
-                  padding:3px;
-                  box-sizing:border-box;
-                  transition:.3s;
-                }
-                input[type=text]:focus{
-                  border-color:dodgerBlue;
-                  box-shadow:0 0 8px 0 dodgerBlue;
-            }
-                </style>
-              <input type="text" name="nome">
-
-
-
-
-
-
-
-</div>
-
-
+            <label for="name">Nome:</label>
+            <input type="text" name="nome"></br>
           </div>
           <div class="form-group">
-            <label for="name">Tipo</label>
+            <label for="name">Tipo:</label>
             <select name="tipo">
               <option value="Sala Comum" selected="selected">Sala Comum</option>
               <option value="Laboratório">Laboratório</option>
             </select>
           </div>
-        <h1><button class="button"><span>Salvar </span></button></h1>
-        <style>
-        .button {
-        border-radius: 100px;
-        background-color: #2F4F4F;
-        border: none;
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 14px;
-        padding: 20px;
-        width: 90px;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px;
-      }
-
-      .button span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-      }
-
-      .button span:after {
-        content: '\00bb';
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -20px;
-        transition: 0.5s;
-      }
-
-      .button:hover span {
-        padding-right: 25px;
-      }
-
-      .button:hover span:after {
-        opacity: 1;
-        right: 0;
-      }
-      </style>
+          <button type="submit" class="btn btn-primary info">Salvar</button>
         </div>
       </form>
     </div>
@@ -156,7 +84,7 @@
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span></button>
-                    <h2 class="modal-title">Confirmação de exclusão</h2>
+                    <h3 class="modal-title">Confirmação de exclusão</h3>
                   </div>
                   <div class="modal-body">
                     <p>Tem certeza que deseja excluir a sala selecionada?</p>
@@ -181,9 +109,6 @@
     </div>
   </div>
 </div>
-<div class="box">
-
-
 
 @stop
 
