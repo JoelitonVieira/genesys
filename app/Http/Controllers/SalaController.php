@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Sala;
+use Validator;
 
 class SalaController extends Controller
 {
@@ -17,6 +18,16 @@ class SalaController extends Controller
 
   public function store(Request $request){
     Sala::create($request->all());
+    $validator = Validator::make($request->all(), [
+            'nome' => 'required',
+            'tipo' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('sala.index')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
     return redirect()->route('sala.index')->with('success','Sala Cadastrada Com Sucesso!');
   }
 

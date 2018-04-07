@@ -31,7 +31,7 @@ return [
     */
 
 
-    'logo' => '<span style="color:white;font-size:18px;"><b>destinat</b></span><span style="color:#36d56a;font-size:18px;"><b>io</b></span>',
+    'logo' => '<span style="color:white;font-size:18px"><b>destinat</b></span><span style="color:#36d56a;font-size:18px"><b>io</b></span>',
 
     'logo_mini' => '<img src="https://imgur.com/xQ8fqdn.png" style="width:30px;">',
     /*
