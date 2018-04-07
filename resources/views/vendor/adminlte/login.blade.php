@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <b style="font-size: 20px;">Alocação de Salas &nbsp&nbsp&nbsp|&nbsp</b>
+                <b style="font-size: 25px;">destinat<b style="color:#36d56a;">io</b> &nbsp&nbsp&nbsp|&nbsp</b>
                 <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}"><img src="https://imgur.com/eWig5zS.png" style="width: 55px; "></a>
             </div>
         </div>
@@ -67,7 +67,7 @@
             </form>
             <div class="auth-links">
                 <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}"
-                   class="text-center"
+                   class="text-center" style="color:#36d56a;" 
                 >Esqueci minha senha</a>
                 <br><br>
             </div>

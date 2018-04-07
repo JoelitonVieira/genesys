@@ -114,7 +114,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     <br><br>
-                    <b> Alocação de </b><b style="color:#36d56a;">Salas</b>
+                    <b style="font-size:100px;">destinat</b><b style="color:#36d56a;font-size:100px;">io</b>
                 </div>
             </div>
         </div>
