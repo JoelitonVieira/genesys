@@ -90,6 +90,8 @@ body {
 .content-wrapper {
   min-height: 100%;
   background-color: white;
+  background-image: url(https://imgur.com/W2e9d7h.png);
+  background-size: cover;
   z-index: 800;
 }
 .main-footer {
@@ -3249,7 +3251,9 @@ table.text-center th {
 }
 .login-page,
 .register-page {
-  background: white;
+  background-color: white;
+  background-image: url(https://imgur.com/W2e9d7h.png);
+  background-size: cover;
 }
 .login-box,
 .register-box {
@@ -3265,7 +3269,7 @@ table.text-center th {
 }
 .login-box-body,
 .register-box-body {
-  background: #fff;
+  background: transparent;
   padding: 20px;
   border-top: 0;
   color: #666;
