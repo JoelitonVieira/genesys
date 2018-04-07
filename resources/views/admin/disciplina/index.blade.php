@@ -45,13 +45,13 @@
           <span class="form-group">
             <label for="name">Turno:</label>
             <select name="turno">
-              <option value="Matutino" selected="selected">Matutino</option>
-              <option value="Vespertino">Vespertino</option>
-              <option value="Noturno">Noturno</option>
+              <option value="matutino" selected="selected">Matutino</option>
+              <option value="vespertino">Vespertino</option>
+              <option value="noturno">Noturno</option>
             </select>
           </span>
           <div class="form-group">
-            <label for="name">Horário:</label>
+            <label for="name">Dias:</label>
             <select name="horario">
               <option value="primeiro" selected="selected">1º</option>
               <option value="segundo">2º</option>

@@ -27,8 +27,7 @@
       <form action="{{action('SalaController@store')}}" method="POST" >
       {{ csrf_field() }}
         <div class="box-body">
-          <div class="form-group">
-
+          <div class="form-group has-feedback {{ $errors->has('nome') ? 'has-error' : '' }}">
 
 
               <div class="imputWithIcon">
@@ -52,13 +51,12 @@
               <input type="text" name="nome">
 
 
-
-
-
-
-
 </div>
-
+@if ($errors->has('nome'))
+    <span class="help-block">
+        <strong>{{ $errors->first('nome') }}</strong>
+    </span>
+@endif
 
           </div>
           <div class="form-group">
