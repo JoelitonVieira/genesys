@@ -24,7 +24,7 @@
                 height: 85vh;
                 color: white;
                 background:#1a1a1a;
-                background-image: url(https://imgur.com/d91zm7f.png);
+                background-image: url(https://imgur.com/6eGkecq.png);
                 background-size: cover;
             }
             #box1 a{
@@ -37,9 +37,10 @@
                 padding-bottom: 8px;
             }
             #box15{
-                height: 110vh;
+                height: 100vh;
                 color: black;
-                background:white;
+                background-image: url(https://imgur.com/W2e9d7h.png);
+                background-size: cover;
             }
             #box2{
                 height: 25vh;
@@ -90,7 +91,6 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -100,7 +100,27 @@
                 height: 90%;
             }
         </style>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
 
+             $(document).scroll(function(){
+                if(window.scrollY > $('#box15').offset().top - window.innerHeight/4) {
+                    document.getElementById("infos").style.opacity = 1;
+                    document.getElementById("infos").style.paddingLeft="0px";
+                    document.getElementById("infos").style.transition = "2s";
+
+                    document.getElementById("hrbox15").style.width = "900px";
+                    document.getElementById("hrbox15").style.transition = "3s";
+
+                    document.getElementById("titulobox15").style.fontSize = "40px";
+                    document.getElementById("titulobox15").style.transition = "1.5s";
+
+                }else{
+
+                }
+            });
+
+        </script>
     </head>
     <body>
 
@@ -120,7 +140,7 @@
                 <div class="title m-b-md">
                     <div id="logo" style="padding-top: 210px;">
                         <b style="font-size:100px;">destinat</b><b style="color:#36d56a;font-size:100px;">io</b>
-                        <p style="font-size:18px;">Um jeito fácil para alocar salas</p>
+                        <p style="font-size:18px;">Um jeito <b style="border-bottom: 2px solid #36d56a">fácil</b> para <b>Alocar <b style="color:#36d56a">Salas</b></b></p>
                     </div>
                 </div>
             </div>
@@ -133,28 +153,28 @@
             <i class="fas fa-angle-down" id="setab" style="font-size: 40px; color:#36d56a;"></i>
             <br><br><br>
 
-            <h2 style="font-size:40px;">Ferramenta para ajudar você a realizar <b style="color:#26b454; ">alocações!</b></h2>
+            <h2 style="font-size:20px; " id="titulobox15">Ferramenta para <span style="border-bottom: 4px solid #36d56a;">ajudar</span> você a realizar <b style="color:#26b454; ">alocações!</b></h2>
 
             
-            <br><hr style="width: 900px;"><br><br><br><br>
+            <br><hr style="width: 0px;" id="hrbox15"><br><br><br><br>
 
-            <div class="row">
+            <div class="row" id="infos" style="opacity: 0;padding-left:600px;">
 
               <div class="col-sm-4">
                   <i class="far fa-calendar-check" style="font-size: 100px; color:#26b454;"></i>
-                  <br><br><br>
+                  <br><br>
                   <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
               </div>
 
               <div class="col-sm-4">
-                  <i class="far fa-calendar-check" style="font-size: 100px; color:#26b454;"></i>
-                  <br><br><br>
+                  <i class="far fa-edit" style="font-size: 100px; color:#26b454;"></i>
+                  <br><br>
                   <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
               </div>
 
               <div class="col-sm-4">
-                  <i class="far fa-calendar-check" style="font-size: 100px; color:#26b454;"></i>
-                  <br><br><br>
+                  <i class="far fa-file" style="font-size: 100px; color:#26b454;"></i>
+                  <br><br>
                   <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
               </div>
 
@@ -165,8 +185,8 @@
 
         <div id="box2">
             <center>
-            <br><br>
-             <b style="color:white; border-bottom: 2px solid #26b454;">EQUIPE GENE</b><b style="color:#26b454;">SYS</b>
+            <br>
+             <b style="color:white; border-bottom: 2px solid #26b454">EQUIPE GENE</b><b style="color:#26b454;">SYS</b>
              <br><br><br>
                         <div class="links">
                             <a href="https://github.com/Acetona19" target="_blank"><i class="fab fa-github" style="color:#26b454;"></i>  Caio</a>
