@@ -10,6 +10,7 @@
 
 @section('content')
 <div class="box">
+  
 
   <form action="/action_page.php">
     <div class="form-group">
