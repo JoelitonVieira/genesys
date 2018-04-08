@@ -106,12 +106,7 @@
              $(document).scroll(function(){
                 if(window.scrollY > $('#box15').offset().top - window.innerHeight/4) {
                     document.getElementById("infos").style.opacity = 1;
-                    document.getElementById("icone1").style.fontSize = "100px";
-                    document.getElementById("icone2").style.fontSize = "100px";
-                    document.getElementById("icone3").style.fontSize = "100px";
-                    document.getElementById("icone1").style.transition = "2s";
-                    document.getElementById("icone2").style.transition = "2s";
-                    document.getElementById("icone3").style.transition = "2s";
+                    document.getElementById("infos").style.paddingLeft="0px";
                     document.getElementById("infos").style.transition = "2s";
 
                     document.getElementById("hrbox15").style.width = "900px";
@@ -163,22 +158,22 @@
             
             <br><hr style="width: 0px;" id="hrbox15"><br><br><br><br>
 
-            <div class="row" id="infos" style="opacity: 0;">
+            <div class="row" id="infos" style="opacity: 0;padding-left:600px;">
 
               <div class="col-sm-4">
-                  <i class="far fa-calendar-check" id="icone1" style="font-size: 0px; color:#26b454;"></i>
+                  <i class="far fa-calendar-check" style="font-size: 100px; color:#26b454;"></i>
                   <br><br>
                   <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
               </div>
 
               <div class="col-sm-4">
-                  <i class="far fa-edit" id="icone2" style="font-size: 0px; color:#26b454;"></i>
+                  <i class="far fa-edit" style="font-size: 100px; color:#26b454;"></i>
                   <br><br>
                   <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
               </div>
 
               <div class="col-sm-4">
-                  <i class="far fa-file" id="icone3" style="font-size: 0px; color:#26b454;"></i>
+                  <i class="far fa-file" style="font-size: 100px; color:#26b454;"></i>
                   <br><br>
                   <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
               </div>
