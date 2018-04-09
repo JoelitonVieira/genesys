@@ -43,17 +43,14 @@
                 background-size: cover;
             }
             #box2{
-                height: 25vh;
+                height: 40vh;
                 background-color: #141414;
                 color: black;
             }
-            #box2 a{
-                color: white;
-            }
-            #box2 a:hover{
-                border-bottom: 2px solid #36d56a;
-                transition: 0.5s;
-                padding-bottom: 8px;
+            
+            #box3{
+                height: 90vh;
+                background-image: url(https://imgur.com/W2e9d7h.png);
             }
 
             .full-height {
@@ -103,8 +100,10 @@
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script type="text/javascript">
 
+            //SCRIPT INFORMAÇÕES
+
              $(document).scroll(function(){
-                if(window.scrollY > $('#box15').offset().top - window.innerHeight/4) {
+                if(window.scrollY > $('#box15').offset().top - window.innerHeight/2) {
                     document.getElementById("infos").style.opacity = 1;
                     document.getElementById("icone1").style.fontSize = "100px";
                     document.getElementById("icone2").style.fontSize = "100px";
@@ -120,10 +119,154 @@
                     document.getElementById("titulobox15").style.fontSize = "40px";
                     document.getElementById("titulobox15").style.transition = "1.5s";
 
+                    
+
                 }else{
 
                 }
+                if(window.scrollY > $('#box2').offset().top - window.innerHeight/2) {
+                    document.getElementById("titulobox2").style.fontSize = "40px";
+                    document.getElementById("titulobox2").style.transition = "1.5s";
+
+                }
             });
+
+
+             //SCRIPT CONTATOS
+
+             // FUNÇÕES PARA AUMENTAR
+        function caio(){
+            mostarIcones();
+            document.getElementById("linome").innerHTML = "Caio Vinicius";
+            document.getElementById("liemail").innerHTML = "caio@gmail.com";
+            document.getElementById("ligit").innerHTML = "<a href='https://github.com/Acetona19' target='_blank'>Acetona19</a>";
+
+            document.getElementById("imgCaio").style.width = "120px";
+            document.getElementById("imgCaio").style.transition = "0.5s";
+
+            document.getElementById("imgCaio").style.filter = "grayscale(0%)";
+
+            padraoJoeliton();
+            padraoMatheus();
+            padraoPatrick();
+            padraoVitor();
+
+        }
+
+        function joe(){
+            mostarIcones();
+            document.getElementById("linome").innerHTML = "Joeliton Vieira";
+            document.getElementById("liemail").innerHTML = "joelitonmatos@gmail.com";
+            document.getElementById("ligit").innerHTML = "<a href='https://github.com/JoelitonVieira' target='_blank'>JoelitonVieira</a>";
+
+            document.getElementById("imgJoeliton").style.width = "120px";
+            document.getElementById("imgJoeliton").style.transition = "0.5s";
+
+            document.getElementById("imgJoeliton").style.filter = "grayscale(0%)";
+
+            padraoCaio();
+            padraoMatheus();
+            padraoPatrick();
+            padraoVitor();
+
+        }
+
+        function mat(){
+            mostarIcones();
+            document.getElementById("linome").innerHTML = "Matheus Trindade";
+            document.getElementById("liemail").innerHTML = "trindadematheus27@gmail.com";
+            document.getElementById("ligit").innerHTML = "<a href='https://github.com/trndd' target='_blank'>trndd</a>";
+
+            document.getElementById("imgMatheus").style.width = "120px";
+            document.getElementById("imgMatheus").style.transition = "0.5s";
+
+            document.getElementById("imgMatheus").style.filter = "grayscale(0%)";
+
+            padraoCaio();
+            padraoJoeliton();
+            padraoPatrick();
+            padraoVitor();
+
+        }
+
+        function pat(){
+            mostarIcones();
+            document.getElementById("linome").innerHTML = "Patrick Vinícius";
+            document.getElementById("liemail").innerHTML = "patrickvinicius1998@hotmail.com";
+            document.getElementById("ligit").innerHTML = "<a href='https://github.com/patrickgenesis' target='_blank'>patrickgenesis</a>";
+
+            document.getElementById("imgPatrick").style.width = "120px";
+            document.getElementById("imgPatrick").style.transition = "0.5s";
+
+            document.getElementById("imgPatrick").style.filter = "grayscale(0%)";
+
+            padraoCaio();
+            padraoJoeliton();
+            padraoMatheus();
+            padraoVitor();
+
+        }
+
+        function vit(){
+            mostarIcones();
+            document.getElementById("linome").innerHTML = "Vitor Mota";
+            document.getElementById("liemail").innerHTML = "vitorsenai2017@gmail.com";
+            document.getElementById("ligit").innerHTML = "<a href='https://github.com/smk-py' target='_blank'>smk-py</a>";
+
+            document.getElementById("imgVitor").style.width = "120px";
+            document.getElementById("imgVitor").style.transition = "0.5s";
+
+            document.getElementById("imgVitor").style.filter = "grayscale(0%)";
+
+            padraoCaio();
+            padraoJoeliton();
+            padraoMatheus();
+            padraoPatrick();
+
+        }
+    //FUNÇÕES INTERNAS - Só estão sendo utilizadas dentro do script
+
+        function mostarIcones(){
+            document.getElementById("icon1").style.opacity = "1";
+            document.getElementById("icon2").style.opacity = "1";
+            document.getElementById("icon3").style.opacity = "1";
+        }
+        function padraoCaio(){
+
+            document.getElementById("imgCaio").style.width = "100px";
+            document.getElementById("imgCaio").style.transition = "0.5s";
+            document.getElementById("imgCaio").style.filter = "grayscale(100%)";
+        }
+
+        function padraoJoeliton(){
+
+            document.getElementById("imgJoeliton").style.width = "100px";
+            document.getElementById("imgJoeliton").style.transition = "0.5s";
+            document.getElementById("imgJoeliton").style.filter = "grayscale(100%)";
+        }
+
+        function padraoMatheus(){
+
+            document.getElementById("imgMatheus").style.width = "100px";
+            document.getElementById("imgMatheus").style.transition = "0.5s";
+            document.getElementById("imgMatheus").style.filter = "grayscale(100%)";
+        }
+
+        function padraoPatrick(){
+
+            document.getElementById("imgPatrick").style.width = "100px";
+            document.getElementById("imgPatrick").style.transition = "0.5s";
+            document.getElementById("imgPatrick").style.filter = "grayscale(100%)";
+
+        }
+
+        function padraoVitor(){
+
+            document.getElementById("imgVitor").style.width = "100px";
+            document.getElementById("imgVitor").style.transition = "0.5s";
+            document.getElementById("imgVitor").style.filter = "grayscale(100%)";
+
+        }
 
         </script>
     </head>
@@ -157,10 +300,7 @@
             <br>
             <i class="fas fa-angle-down" id="setab" style="font-size: 40px; color:#36d56a;"></i>
             <br><br><br>
-
-            <h2 style="font-size:20px; " id="titulobox15">Ferramenta para <span style="border-bottom: 4px solid #36d56a;">ajudar</span> você a realizar <b style="color:#26b454; ">alocações!</b></h2>
-
-            
+            <h2 style="font-size:20px;color:black; " id="titulobox15">Um jeito <span style="border-bottom: 4px solid #36d56a;">fácil </span> de alocar <b style="color:#26b454; ">salas!</b></h2>
             <br><hr style="width: 0px;" id="hrbox15"><br><br><br><br>
 
             <div class="row" id="infos" style="opacity: 0;">
@@ -189,19 +329,37 @@
 
 
         <div id="box2">
+            <br><br><br><br>
             <center>
-            <br>
-             <b style="color:white; border-bottom: 2px solid #26b454">EQUIPE GENE</b><b style="color:#26b454;">SYS</b>
-             <br><br><br>
-                        <div class="links">
-                            <a href="https://github.com/Acetona19" target="_blank"><i class="fab fa-github" style="color:#26b454;"></i>  Caio</a>
-                            <a href="https://github.com/JoelitonVieira" target="_blank"><i class="fab fa-github" style="color:#26b454;"></i>  Joeliton</a>
-                            <a href="https://github.com/trndd" target="_blank"><i class="fab fa-github" style="color:#26b454;"></i>  Matheus</a>
-                            <a href="#" target="_blank"><i class="fab fa-github" style="color:#26b454;"></i>  Patrick</a>
-                            <a href="#" target="_blank"><i class="fab fa-github" style="color:#26b454;"></i>  Vitor</a>
-                        </div>
-            </center>
-       </div>       
+            <h2 style="font-size:20px;color:white; " id="titulobox2">Ferramenta para <span style="border-bottom: 4px solid #36d56a;">ajudar</span> você a realizar <b style="color:#26b454; ">alocações!</b></h2>
+        </center>
+        </div>  
+
+        <div id="box3">
+            <br><br><br>
+                    <center>
+            <h1><b>EQUIPE GENE<b style="color:#36d56a">SYS</b></b></h1>
+            <h4>Passe o mouse sobre o avatar para ver as informações</h4><br><br>
+            <img src="https://imgur.com/vb95fCX.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgCaio" onmouseover="caio()">
+            <img src="https://imgur.com/VPSgF5v.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgJoeliton" onmouseover="joe()">
+            <img src="https://imgur.com/pqOEUEg.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgMatheus" onmouseover="mat()">
+            <img src="https://imgur.com/NChrp5e.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgPatrick" onmouseover="pat()">
+            <img src="https://imgur.com/9Ay95YJ.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgVitor"onmouseover="vit()">
+
+        </center>
+
+        <br><br>
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-8">
+                <ul class="list-group" style="padding:0px 200px 0px 200px; color:black;font-size:20px;">
+                  <li class="list-group-item"  style="border-color: transparent;background-color: transparent;"><i class="fas fa-user" style="color:#36d56a; opacity: 0;" id="icon1"></i>&nbsp&nbsp<b id="linome"></b></li>
+                  <li class="list-group-item"  style="border-color: transparent;background-color: transparent;"><i class="fas fa-envelope" style="color:#36d56a; opacity: 0;" id="icon2"></i>&nbsp&nbsp<b id="liemail"></b></li>
+                  <li class="list-group-item" style="border-color: transparent;background-color: transparent;"><i class="fab fa-github" style="color:#36d56a; opacity: 0;" id="icon3"></i>&nbsp&nbsp<b id="ligit"></b></li>
+                </ul>
+              </div>
+            </div>
+        </div>            
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/demo/js/app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
