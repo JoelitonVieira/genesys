@@ -52,7 +52,10 @@
 
 			document.getElementById("imgCaio").style.filter = "grayscale(0%)";
 
-			padraoCaio();
+			padraoJoeliton();
+			padraoMatheus();
+			padraoPatrick();
+			padraoVitor();
 
 		}
 
@@ -66,7 +69,10 @@
 
 			document.getElementById("imgJoeliton").style.filter = "grayscale(0%)";
 
-			padraoJoeliton();
+			padraoCaio();
+			padraoMatheus();
+			padraoPatrick();
+			padraoVitor();
 
 		}
 
@@ -80,7 +86,10 @@
 
 			document.getElementById("imgMatheus").style.filter = "grayscale(0%)";
 
-			padraoMatheus();
+			padraoCaio();
+			padraoJoeliton();
+			padraoPatrick();
+			padraoVitor();
 
 		}
 
@@ -94,7 +103,10 @@
 
 			document.getElementById("imgPatrick").style.filter = "grayscale(0%)";
 
-			padraoPatrick();
+			padraoCaio();
+			padraoJoeliton();
+			padraoMatheus();
+			padraoVitor();
 
 		}
 
@@ -107,103 +119,48 @@
 			document.getElementById("imgVitor").style.transition = "0.5s";
 
 			document.getElementById("imgVitor").style.filter = "grayscale(0%)";
-			padraoVitor();
+
+			padraoCaio();
+			padraoJoeliton();
+			padraoMatheus();
+			padraoPatrick();
 
 		}
 	//FUNÇÕES INTERNAS - Só estão sendo utilizadas dentro do script
 		function padraoCaio(){
 
-			document.getElementById("imgJoeliton").style.width = "100px";
-			document.getElementById("imgJoeliton").style.transition = "0.5s";
-			document.getElementById("imgJoeliton").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgMatheus").style.width = "100px";
-			document.getElementById("imgMatheus").style.transition = "0.5s";
-			document.getElementById("imgMatheus").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgPatrick").style.width = "100px";
-			document.getElementById("imgPatrick").style.transition = "0.5s";
-			document.getElementById("imgPatrick").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgVitor").style.width = "100px";
-			document.getElementById("imgVitor").style.transition = "0.5s";
-			document.getElementById("imgVitor").style.filter = "grayscale(100%)";
+			document.getElementById("imgCaio").style.width = "100px";
+			document.getElementById("imgCaio").style.transition = "0.5s";
+			document.getElementById("imgCaio").style.filter = "grayscale(100%)";
 		}
 
 		function padraoJoeliton(){
 
-			document.getElementById("imgCaio").style.width = "100px";
-			document.getElementById("imgCaio").style.transition = "0.5s";
-			document.getElementById("imgCaio").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgMatheus").style.width = "100px";
-			document.getElementById("imgMatheus").style.transition = "0.5s";
-			document.getElementById("imgMatheus").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgPatrick").style.width = "100px";
-			document.getElementById("imgPatrick").style.transition = "0.5s";
-			document.getElementById("imgPatrick").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgVitor").style.width = "100px";
-			document.getElementById("imgVitor").style.transition = "0.5s";
-			document.getElementById("imgVitor").style.filter = "grayscale(100%)";
+			document.getElementById("imgJoeliton").style.width = "100px";
+			document.getElementById("imgJoeliton").style.transition = "0.5s";
+			document.getElementById("imgJoeliton").style.filter = "grayscale(100%)";
 		}
 
 		function padraoMatheus(){
 
-			document.getElementById("imgCaio").style.width = "100px";
-			document.getElementById("imgCaio").style.transition = "0.5s";
-			document.getElementById("imgCaio").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgJoeliton").style.width = "100px";
-			document.getElementById("imgJoeliton").style.transition = "0.5s";
-			document.getElementById("imgJoeliton").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgPatrick").style.width = "100px";
-			document.getElementById("imgPatrick").style.transition = "0.5s";
-			document.getElementById("imgPatrick").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgVitor").style.width = "100px";
-			document.getElementById("imgVitor").style.transition = "0.5s";
-			document.getElementById("imgVitor").style.filter = "grayscale(100%)";
+			document.getElementById("imgMatheus").style.width = "100px";
+			document.getElementById("imgMatheus").style.transition = "0.5s";
+			document.getElementById("imgMatheus").style.filter = "grayscale(100%)";
 		}
 
 		function padraoPatrick(){
 
-			document.getElementById("imgCaio").style.width = "100px";
-			document.getElementById("imgCaio").style.transition = "0.5s";
-			document.getElementById("imgCaio").style.filter = "grayscale(100%)";
+			document.getElementById("imgPatrick").style.width = "100px";
+			document.getElementById("imgPatrick").style.transition = "0.5s";
+			document.getElementById("imgPatrick").style.filter = "grayscale(100%)";
 
-			document.getElementById("imgJoeliton").style.width = "100px";
-			document.getElementById("imgJoeliton").style.transition = "0.5s";
-			document.getElementById("imgJoeliton").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgMatheus").style.width = "100px";
-			document.getElementById("imgMatheus").style.transition = "0.5s";
-			document.getElementById("imgMatheus").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgVitor").style.width = "100px";
-			document.getElementById("imgVitor").style.transition = "0.5s";
-			document.getElementById("imgVitor").style.filter = "grayscale(100%)";
 		}
 
 		function padraoVitor(){
 
-			document.getElementById("imgCaio").style.width = "100px";
-			document.getElementById("imgCaio").style.transition = "0.5s";
-			document.getElementById("imgCaio").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgJoeliton").style.width = "100px";
-			document.getElementById("imgJoeliton").style.transition = "0.5s";
-			document.getElementById("imgJoeliton").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgMatheus").style.width = "100px";
-			document.getElementById("imgMatheus").style.transition = "0.5s";
-			document.getElementById("imgMatheus").style.filter = "grayscale(100%)";
-
-			document.getElementById("imgPatrick").style.width = "100px";
-			document.getElementById("imgPatrick").style.transition = "0.5s";
-			document.getElementById("imgPatrick").style.filter = "grayscale(100%)";
+			document.getElementById("imgVitor").style.width = "100px";
+			document.getElementById("imgVitor").style.transition = "0.5s";
+			document.getElementById("imgVitor").style.filter = "grayscale(100%)";
 
 		}
 
