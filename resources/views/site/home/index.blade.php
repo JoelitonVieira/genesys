@@ -103,7 +103,7 @@
             //SCRIPT INFORMAÇÕES
 
              $(document).scroll(function(){
-                if(window.scrollY > $('#box15').offset().top - window.innerHeight/2) {
+                if(window.scrollY > $('#box15').offset().top - window.innerHeight) {
                     document.getElementById("infos").style.opacity = 1;
                     document.getElementById("icone1").style.fontSize = "100px";
                     document.getElementById("icone2").style.fontSize = "100px";
@@ -286,9 +286,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <div id="logo" style="padding-top: 210px;">
-                        <b style="font-size:100px;">destinat</b><b style="color:#36d56a;font-size:100px;">io</b>
-                        <p style="font-size:18px;">Um jeito <b style="border-bottom: 2px solid #36d56a">fácil</b> para <b>Alocar <b style="color:#36d56a">Salas</b></b></p>
+                    <div id="logo" style="padding-top: 100px;">
+                        <img src="https://imgur.com/KJ6hAaS.png" style="width: 220px;margin-bottom: 0px;"><br>
+                        <b style="font-size:40px;margin-top: 0px;">destinat</b><b style="color:#36d56a;font-size:40px;">io</b>
                     </div>
                 </div>
             </div>
@@ -300,8 +300,8 @@
             <br>
             <i class="fas fa-angle-down" id="setab" style="font-size: 40px; color:#36d56a;"></i>
             <br><br><br>
-            <h2 style="font-size:20px;color:black; " id="titulobox15">Um jeito <span style="border-bottom: 4px solid #36d56a;">fácil </span> de alocar <b style="color:#26b454; ">salas!</b></h2>
-            <br><hr style="width: 0px;" id="hrbox15"><br><br><br><br>
+            <h2 style="font-size:20px;color:black; " id="titulobox15">Um jeito <span style="border-bottom: 4px solid #36d56a;">fácil </span> de Alocar <b style="color:#26b454; ">Salas!</b></h2>
+            <br><hr style="width: 0px;" id="hrbox15"><br><br>
 
             <div class="row" id="infos" style="opacity: 0;">
 
