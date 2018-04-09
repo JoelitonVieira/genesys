@@ -32,23 +32,8 @@
 
               <div class="imputWithIcon">
 
-                <style>
-                input[type=text]{
-                  width:20%;
-                  border:2px solid 	#000000;
-                  border-radius:4px;
-                  margin:8px 0;
-                  outline:none;
-                  padding:3px;
-                  box-sizing:border-box;
-                  transition:.3s;
-                }
-                input[type=text]:focus{
-                  border-color:dodgerBlue;
-                  box-shadow:0 0 8px 0 dodgerBlue;
-            }
-                </style>
-              <input type="text" name="nome">
+                
+              <input type="text" name="nome" class="form-control">
 
 
 </div>

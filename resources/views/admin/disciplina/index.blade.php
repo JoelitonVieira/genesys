@@ -26,32 +26,32 @@
       <form action="{{action('DisciplinaController@store')}}" method="POST" >
       {{ csrf_field() }}
         <div class="box-body">
-          <div class="form-group">
+          <div class="col-md-4">
             <label for="name">Nome:</label>
             <input type="text" name="nome"></br>
           </div>
-          <div class="form-group">
+          <div class="col-md-4">
             <label for="name">Código:</label>
             <input type="text" name="codigo"></br>
           </div>
-          <div class="form-group">
+          <div class="col-md-4">
             <label for="name">Turma:</label>
             <input type="text" name="turma"></br>
           </div>
-          <div class="form-group">
+          <div class="col-md-4">
             <label for="name">Professor:</label>
             <input type="text" name="professor"></br>
           </div>
-          <span class="form-group">
+          <div class="col-md-4">
             <label for="name">Turno:</label>
             <select name="turno">
               <option value="matutino" selected="selected">Matutino</option>
               <option value="vespertino">Vespertino</option>
               <option value="noturno">Noturno</option>
             </select>
-          </span>
-          <div class="form-group">
-            <label for="name">Dias:</label>
+          </div>
+          <div class="col-md-4">
+            <label for="name">Horários:</label>
             <select name="horario">
               <option value="primeiro" selected="selected">1º</option>
               <option value="segundo">2º</option>
@@ -61,8 +61,8 @@
               <option value="sexto">6º</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="name">Horário:</label>
+          <div class="col-md-4">
+            <label for="name">Dias:</label>
             <select class="selectpicker" multiple="multiple" name="dia">
               <option value="1">Segunda</option>
               <option value="2">Terça</option>

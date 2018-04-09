@@ -14,4 +14,5 @@ class Sala extends Model
       'tipo',
       'nome'
     ];
+
 }
