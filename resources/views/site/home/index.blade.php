@@ -50,7 +50,8 @@
             
             #box3{
                 height: 90vh;
-                background-image: url(https://imgur.com/W2e9d7h.png);
+                background-color: #fdfdfd;
+                border-bottom: 4px solid black;
             }
 
             .full-height {
@@ -143,6 +144,7 @@
 
             document.getElementById("imgCaio").style.width = "120px";
             document.getElementById("imgCaio").style.transition = "0.5s";
+            document.getElementById("imgCaio").src = "https://imgur.com/zR3g2Ox.gif";
 
             document.getElementById("imgCaio").style.filter = "grayscale(0%)";
 
@@ -161,6 +163,7 @@
 
             document.getElementById("imgJoeliton").style.width = "120px";
             document.getElementById("imgJoeliton").style.transition = "0.5s";
+            document.getElementById("imgJoeliton").src = "https://imgur.com/dBHPUpx.gif";
 
             document.getElementById("imgJoeliton").style.filter = "grayscale(0%)";
 
@@ -179,6 +182,7 @@
 
             document.getElementById("imgMatheus").style.width = "120px";
             document.getElementById("imgMatheus").style.transition = "0.5s";
+            document.getElementById("imgMatheus").src = "https://imgur.com/WCMFRAb.gif";
 
             document.getElementById("imgMatheus").style.filter = "grayscale(0%)";
 
@@ -197,6 +201,7 @@
 
             document.getElementById("imgPatrick").style.width = "120px";
             document.getElementById("imgPatrick").style.transition = "0.5s";
+            document.getElementById("imgPatrick").src = "https://imgur.com/aG1qytn.gif";
 
             document.getElementById("imgPatrick").style.filter = "grayscale(0%)";
 
@@ -215,6 +220,7 @@
 
             document.getElementById("imgVitor").style.width = "120px";
             document.getElementById("imgVitor").style.transition = "0.5s";
+            document.getElementById("imgVitor").src = "https://imgur.com/o72hlMg.gif";
 
             document.getElementById("imgVitor").style.filter = "grayscale(0%)";
 
@@ -236,6 +242,7 @@
             document.getElementById("imgCaio").style.width = "100px";
             document.getElementById("imgCaio").style.transition = "0.5s";
             document.getElementById("imgCaio").style.filter = "grayscale(100%)";
+            document.getElementById("imgCaio").src = "https://imgur.com/mDMZEQH.png";
         }
 
         function padraoJoeliton(){
@@ -243,6 +250,7 @@
             document.getElementById("imgJoeliton").style.width = "100px";
             document.getElementById("imgJoeliton").style.transition = "0.5s";
             document.getElementById("imgJoeliton").style.filter = "grayscale(100%)";
+            document.getElementById("imgJoeliton").src = "https://imgur.com/RMHYbI1.png";
         }
 
         function padraoMatheus(){
@@ -250,6 +258,7 @@
             document.getElementById("imgMatheus").style.width = "100px";
             document.getElementById("imgMatheus").style.transition = "0.5s";
             document.getElementById("imgMatheus").style.filter = "grayscale(100%)";
+            document.getElementById("imgMatheus").src = "https://imgur.com/Kzh0MDN.png";
         }
 
         function padraoPatrick(){
@@ -257,6 +266,7 @@
             document.getElementById("imgPatrick").style.width = "100px";
             document.getElementById("imgPatrick").style.transition = "0.5s";
             document.getElementById("imgPatrick").style.filter = "grayscale(100%)";
+            document.getElementById("imgPatrick").src = "https://imgur.com/f9I96SR.png"; 
 
         }
 
@@ -265,9 +275,17 @@
             document.getElementById("imgVitor").style.width = "100px";
             document.getElementById("imgVitor").style.transition = "0.5s";
             document.getElementById("imgVitor").style.filter = "grayscale(100%)";
+            document.getElementById("imgVitor").src = "https://imgur.com/XLrW4ir.png"; 
 
         }
 
+        $("#gifdiv").click(function () {
+            if ($(this).find("img").attr("data-state") == "static") {
+              $(this).find("img").attr("src", "animatedgif.gif");
+            } else {
+              $(this).find("img").attr("src", "staticgif.jpg");
+            }
+          });
         </script>
     </head>
     <body>
@@ -340,11 +358,11 @@
                     <center>
             <h1><b>EQUIPE GENE<b style="color:#36d56a">SYS</b></b></h1>
             <h4>Passe o mouse sobre o avatar para ver as informações</h4><br><br>
-            <img src="https://imgur.com/vb95fCX.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgCaio" onmouseover="caio()">
-            <img src="https://imgur.com/VPSgF5v.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgJoeliton" onmouseover="joe()">
-            <img src="https://imgur.com/pqOEUEg.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgMatheus" onmouseover="mat()">
-            <img src="https://imgur.com/NChrp5e.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgPatrick" onmouseover="pat()">
-            <img src="https://imgur.com/9Ay95YJ.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgVitor"onmouseover="vit()">
+            <img src="https://imgur.com/mDMZEQH.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgCaio" onmouseover="caio()">
+            <img src="https://imgur.com/RMHYbI1.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgJoeliton" onmouseover="joe()">
+            <img src="https://imgur.com/Kzh0MDN.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgMatheus" onmouseover="mat()">
+            <img src="https://imgur.com/f9I96SR.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgPatrick" onmouseover="pat()">
+            <img src="https://imgur.com/XLrW4ir.png" style="width: 100px;margin-right: 30px;filter: grayscale(100%);" id="imgVitor"onmouseover="vit()">
 
         </center>
 
