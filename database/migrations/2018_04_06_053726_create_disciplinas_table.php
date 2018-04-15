@@ -22,7 +22,6 @@ class CreateDisciplinasTable extends Migration
             $table->string('professor');
             $table->string('horario');
             $table->string('turno');
-            $table->foreign('disciplinaId')->references('id')->on('dias');
         });
     }
 

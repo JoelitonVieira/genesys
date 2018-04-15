@@ -1,10 +1,10 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Cadastro de Sala')
+@section('title', 'Cadastro de Salas e Laboratórios')
 
 @section('content_header')
-<div class ="header"><h1 style="background-color:white;text-align:center;font-size:200%">SALAS</h1><br/></div>
+<div class ="header"><h1 style="color:WHITE;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">SALAS E LABORATÓRIOS</h1><br/></div>
 
 @stop
 
@@ -19,148 +19,97 @@
 </div>
 @endif
 <div class="row">
-  <div class="col-md-12">
-    <div class="box">
-      <div class="header">
-        <h3>Cadastrar Sala</h3>
-      </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="header">
+      <h4 class="pageHeader">CADASTRAR SALA/LABORATÓRIO</h4>
+    </div>
+    <div style="border:1.0px solid #444">
       <form action="{{action('SalaController@store')}}" method="POST" >
       {{ csrf_field() }}
         <div class="box-body">
           <div class="form-group has-feedback {{ $errors->has('nome') ? 'has-error' : '' }}">
-
-
-              <div class="imputWithIcon">
-
-                
-              <input type="text" name="nome" class="form-control">
-
-
-</div>
-@if ($errors->has('nome'))
-    <span class="help-block">
-        <strong>{{ $errors->first('nome') }}</strong>
-    </span>
-@endif
-
+            <label for="name">Nome:</label></br>
+            <input type="text" name="nome" placeholder="Nome da Sala/Laboratório" class="form-control">
+            @if ($errors->has('nome'))
+              <span class="help-block">
+                  <strong>{{ $errors->first('nome') }}</strong>
+              </span>
+            @endif
           </div>
+
           <div class="form-group">
-            <label for="name">Tipo</label>
-            <select name="tipo">
-              <option value="Sala Comum" selected="selected">Sala Comum</option>
-              <option value="Laboratório">Laboratório</option>
+            <label for="name">Tipo:</label></br>
+            <select class="selectpicker" name="tipo">
+              <option value="Sala Comum"  class="optionSelect" selected="selected">Sala Comum</option>
+              <option value="Laboratório" class="optionSelect">Laboratório</option>
             </select>
           </div>
-        <h1><button class="button"><span>Salvar </span></button></h1>
-        <style>
-        .button {
-        border-radius: 100px;
-        background-color: #2F4F4F;
-        border: none;
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 14px;
-        padding: 20px;
-        width: 90px;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px;
-      }
 
-      .button span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-      }
+          <button class="buttonSalvar"><span>SALVAR</span></button>
 
-      .button span:after {
-        content: '\00bb';
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -20px;
-        transition: 0.5s;
-      }
-
-      .button:hover span {
-        padding-right: 25px;
-      }
-
-      .button:hover span:after {
-        opacity: 1;
-        right: 0;
-      }
-      </style>
         </div>
       </form>
     </div>
   </div>
 </div>
+</br>
 
 <div class="row">
   <div class="col-md-12">
-    <div class="box">
-      <div class="header">
-        <h3>Salas Existentes</h3>
-      </div>
-      <div class="body table-responsive">
-        <table class="table table-hover table-dark">
-          <thead>
-            <tr style="background-color:gray">
-              <th  scope="col">#</th>
-              <th  scope="col">NOME</th>
-              <th scope="col">TIPO</th>
-              <th width="28%" class="text-center" scope="col">OPÇÕES</th>
-            </tr>
-          </thead>
-          @foreach ($salas as $sala)
-            <tbody>
-              <tr>
-                <th scope="row">{{ ++$i }}</th>
-                <td>{{ $sala->nome }}</td>
-                <td>{{ $sala->tipo }}</td>
-                <td class="text-center">
-                	<a class="btn btn-info waves-effect" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> EDITAR</a>
-                  <!--<form style="display: inline;" action="{{ route('sala.destroy', $sala->id) }}" method="POST">
+    <div class="header">
+      <h4 class="pageHeader">SALAS/LABORATÓRIOS EXISTENTES</h4>
+    </div>
+    <div class="body table-responsive">
+      <table class="table table-dark table-striped table-bordered table-hover">
+        <thead>
+          <tr style="background-color:#616161">
+            <th  scope="col" style="color:white">#</th>
+            <th  scope="col" style="color:white">NOME</th>
+            <th scope="col" style="color:white">TIPO</th>
+            <th class="text-center" scope="col" style="color:white" width="28%">OPÇÕES</th>
+          </tr>
+        </thead>
+        @foreach ($salas as $sala)
+        <tbody>
+          <tr>
+            <th scope="row">{{ ++$i }}</th>
+            <td>{{ $sala->nome }}</td>
+            <td>{{ $sala->tipo }}</td>
+            <td class="text-center">
+            	<a class="btn btn-info" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> EDITAR</a>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
+              <i class="fa fa-close"></i> DELETAR
+              </button>
+          	</td>
+          </tr>
+        </tbody>
+          <div class="modal fade" id="modal-danger">
+            <div class="modal-dialog" style="width:400px">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                  <h2 class="modal-title" style="text-align:center">Confirmação de Exclusão</h2>
+                </div>
+                <div class="modal-body">
+                  <p style="text-align:center">Tem certeza que deseja excluir a sala selecionada?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">NÃO</button>
+                  <form style="display: inline;" action="{{ route('sala.destroy', $sala->id) }}" method="POST">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-danger waves-effect" value="DELETAR" name="deletar">
-                  </form>-->
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
-                  <i class="fa fa-close"></i> DELETAR
-                  </button>
-              	</td>
-              </tr>
-            </tbody>
-            <div class="modal fade" id="modal-danger">
-              <div class="modal-dialog" style="width:400px">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span></button>
-                    <h2 class="modal-title">Confirmação de exclusão</h2>
-                  </div>
-                  <div class="modal-body">
-                    <p>Tem certeza que deseja excluir a sala selecionada?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Não</button>
-                    <form style="display: inline;" action="{{ route('sala.destroy', $sala->id) }}" method="POST">
-                      {{ method_field('DELETE') }}
-                      {{ csrf_field() }}
-                      <input type="submit" class="btn btn-info waves-effect" value="Deletar" name="deletar">
-                    </form>
-                  </div>
+                    <input type="submit" class="btn btn-info" value="DELETAR" name="deletar">
+                  </form>
                 </div>
-                <!-- /.modal-content -->
               </div>
-              <!-- /.modal-dialog -->
+              <!-- /.modal-content -->
             </div>
-          @endforeach
-        </table>
-        {!! $salas->links() !!}
-      </div>
+            <!-- /.modal-dialog -->
+          </div>
+        @endforeach
+      </table>
+      {!! $salas->links() !!}
     </div>
   </div>
 </div>

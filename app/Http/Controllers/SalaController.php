@@ -19,16 +19,7 @@ class SalaController extends Controller
   }
 
   public function store(StoreSala $request){
-    Sala::create($request->all());
-    /*$validator = Validator::make($request->all(), [
-
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->route('sala.index')
-                        ->withErrors($validator)
-                        ->withInput();
-        }*/
+    Sala::create($request->all());    
     return redirect()->route('sala.index')->with('success','Sala Cadastrada Com Sucesso!');
     $validated = $request->validated();
   }
@@ -37,10 +28,11 @@ class SalaController extends Controller
       return view('admin.sala.edit', compact('sala'));
   }
 
-  public function update(Request $request, $id) {
+  public function update(StoreSala $request, $id) {
       $sala = Sala::find($id);
       $sala->update($request->all());
       return redirect()->route('sala.index')->with('success','Sala Atualizada com Sucesso!');
+      $validated = $request->validated();
   }
 
   public function destroy($id) {

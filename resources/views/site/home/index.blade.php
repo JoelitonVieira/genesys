@@ -47,7 +47,7 @@
                 background-color: #141414;
                 color: black;
             }
-            
+
             #box3{
                 height: 90vh;
                 background-image: url(https://imgur.com/W2e9d7h.png);
@@ -119,7 +119,7 @@
                     document.getElementById("titulobox15").style.fontSize = "40px";
                     document.getElementById("titulobox15").style.transition = "1.5s";
 
-                    
+
 
                 }else{
 
@@ -326,14 +326,14 @@
             </div>
             </center>
         </div>
-
+      -->
 
         <div id="box2">
             <br><br><br><br>
             <center>
             <h2 style="font-size:20px;color:white; " id="titulobox2">Ferramenta para <span style="border-bottom: 4px solid #36d56a;">ajudar</span> você a realizar <b style="color:#26b454; ">alocações!</b></h2>
         </center>
-        </div>  
+        </div>
 
         <div id="box3">
             <br><br><br>
@@ -359,7 +359,7 @@
                 </ul>
               </div>
             </div>
-        </div>            
+        </div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/demo/js/app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

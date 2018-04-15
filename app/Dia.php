@@ -6,17 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dia extends Model
 {
-  protected $primaryKey = "id";
-  public $incrementing = true;
+  protected $primaryKey = "disciplinaId";
+
+  public $incrementing = false;
 
   protected $fillable = [
-    'nome',
-    'codigo',
-    'turma',
-    'professor',
-    'dia',
-    'turno',
-    'horario',
-    'dias'
+    'seg',
+    'ter',
+    'quar',
+    'quin',
+    'sex',
+    'sab',
   ];
+
+  public function Disciplina() {
+      return $this->belongsOne(Disciplina::class, 'disciplinaId','id');
+  }
 }

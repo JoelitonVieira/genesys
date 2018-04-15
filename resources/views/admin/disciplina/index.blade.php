@@ -18,7 +18,8 @@
 </div>
 @endif
 <div class="row">
-  <div class="col-md-12">
+
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="box">
       <div class="header">
         <h3>Cadastrar Disciplina</h3>
@@ -27,23 +28,23 @@
       {{ csrf_field() }}
         <div class="box-body">
           <div class="col-md-4">
-            <label for="name">Nome:</label>
+            <label for="name">Nome:</label></br>
             <input type="text" name="nome"></br>
           </div>
           <div class="col-md-4">
-            <label for="name">Código:</label>
+            <label for="name">Código:</label></br>
             <input type="text" name="codigo"></br>
           </div>
           <div class="col-md-4">
-            <label for="name">Turma:</label>
+            <label for="name">Turma:</label></br>
             <input type="text" name="turma"></br>
           </div>
           <div class="col-md-4">
-            <label for="name">Professor:</label>
+            <label for="name">Professor:</label></br>
             <input type="text" name="professor"></br>
           </div>
           <div class="col-md-4">
-            <label for="name">Turno:</label>
+            <label for="name">Turno:</label></br>
             <select name="turno">
               <option value="matutino" selected="selected">Matutino</option>
               <option value="vespertino">Vespertino</option>
@@ -51,7 +52,7 @@
             </select>
           </div>
           <div class="col-md-4">
-            <label for="name">Horários:</label>
+            <label for="name">Horários:</label></br>
             <select name="horario">
               <option value="primeiro" selected="selected">1º</option>
               <option value="segundo">2º</option>
@@ -62,10 +63,10 @@
             </select>
           </div>
           <div class="col-md-4">
-            <label for="name">Dias:</label>
-            <select class="selectpicker" multiple="multiple" name="dia">
-              <option value="1">Segunda</option>
-              <option value="2">Terça</option>
+            <label for="name">Dias:</label></br>
+            <select class="selectpicker" multiple="multiple" name="dia[]">
+              <option value="seg">Segunda</option>
+              <option value="ter">Terça</option>
               <option value="quar">Quarta</option>
               <option value="quin">Quinta</option>
               <option value="sex">Sexta</option>

@@ -83,7 +83,7 @@ return [
     ],
     'string' => 'O campo :attribute deve ser uma string.',
     'timezone' => 'O campo :attribute deve conter um fuso horário válido.',
-    'unique' => 'O valor informado para o campo :attribute já está em uso.',
+    'unique' => 'O valor informado para o campo :attribute já está em uso. Por favor, digite outro valor.',
     'uploaded' => 'Falha no Upload do arquivo :attribute.',
     'url' => 'O formato da URL informada para o campo :attribute é inválido.',
 

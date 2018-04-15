@@ -24,16 +24,15 @@ class StoreSala extends FormRequest
      public function rules()
      {
        return [
-           'nome' => 'required',
+           'nome' => 'required|unique:salas',
            'tipo' => 'required',
        ];
      }
 
-     /*public function messages()
+     public function messages()
       {
         return [
-            'nome.required' => 'A title is required',
-            'tipo.required'  => 'A message is required',
+            'nome.unique' => 'O nome informado já existe. Por favor, digite outro nome.',
         ];
-      }*/
+      }
 }

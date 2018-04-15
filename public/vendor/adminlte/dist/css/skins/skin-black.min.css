@@ -3,22 +3,83 @@
  * -----------
  */
 /* skin-black navbar */
+/*TELAS*/
+/*Classe dos títulos das páginas*/
+.pageHeader{
 
-/* BARRA DE CIMA */
+  background-color:#444;
+  color:white;
+  width:100%;
+  text-align:center;
+  padding:10px;
+
+}
+/*Classe dos selects*/
+.optionSelect:hover{
+
+  background-color:#333333
+
+}
+.optionSelect{
+
+  background:white
+
+}
+/*Botão de Salvar*/
+.buttonSalvar {
+border-radius:3px;
+background-color: #616161;
+border: none;
+color: #FFFFFF;
+text-align: center;
+font-size: 15px;
+padding: 8px;
+width: 120px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+.buttonSalvar span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.buttonSalvar span:after {
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.buttonSalvar:hover span {
+padding-right: 25px;
+}
+
+.buttonSalvar:hover span:after {
+opacity: 1;
+right: 1;
+}
+/* Entrada de texto */
 input[type=text]{
   width:20%;
-  border:2px solid 	#000000;
+  border:1.5px solid 	#000000;
   border-radius:4px;
   margin:8px 0;
   outline:none;
   padding:3px;
   box-sizing:border-box;
   transition:.3s;
-}
+
 input[type=text]:focus{
   border-color:dodgerBlue;
   box-shadow:0 0 8px 0 dodgerBlue;
-}
+}}
+/* BARRA DE CIMA */
 .sk
 in-black .main-header .navbar-toggle {
   color: #141414;

@@ -9,17 +9,28 @@
 @stop
 
 @section('content')
-<div class="box">
-
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="name">Nome do Professor:</label>
-      <input type="text" id="name">
-    </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
-
+@if ($message = Session::get('success'))
+<div class="alert bg-green alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  	<span aria-hidden="true">&times;</span>
+  </button>
+  <p>{{ $message }}</p>
 </div>
+@endif
+<form action="{{action('ProfessorController@store')}}" method="POST" >
+{{ csrf_field() }}
+
+<label for="name">Dias:</label>
+<select class="selectpicker" multiple="multiple" name="dias_array[]">
+  <option value="1">Segunda</option>
+  <option value="2">Terça</option>
+  <option value="quar">Quarta</option>
+  <option value="quin">Quinta</option>
+  <option value="sex">Sexta</option>
+  <option value="sab">Sábado</option>
+</select>
+<button type="submit" class="btn btn-primary info">Salvar</button>
+</form>
 @stop
 
 @section('js')

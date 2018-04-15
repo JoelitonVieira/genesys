@@ -14,8 +14,16 @@ class CreateDiasTable extends Migration
     public function up()
     {
         Schema::create('dias', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->integer('disciplinaId')->unsigned();
+          $table->primary('disciplinaId');
+          $table->string('seg')->default('0');
+          $table->string('ter')->default('0');
+          $table->string('quar')->default('0');
+          $table->string('quin')->default('0');
+          $table->string('sex')->default('0');
+          $table->string('sab')->default('0');
+          $table->foreign('disciplinaId')->references('id')->on('disciplinas');
+          $table->timestamps();
         });
     }
 
