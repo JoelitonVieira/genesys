@@ -326,19 +326,19 @@
               <div class="col-sm-4">
                   <i class="far fa-calendar-check" id="icone1" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
+                  <p>Este sistema possui sistema para cadastro de professor, sala e disciplina.</p>
               </div>
 
               <div class="col-sm-4">
                   <i class="far fa-edit" id="icone2" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
+                  <p>Mesmo após realizada a alocação<br> a mesma pode ser editada.</p>
               </div>
 
               <div class="col-sm-4">
                   <i class="far fa-file" id="icone3" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
+                  <p>O destinatio gera um relatório contendo todas as informações da alocação.</p>
               </div>
 
             </div>
