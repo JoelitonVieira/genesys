@@ -326,19 +326,19 @@
               <div class="col-sm-4">
                   <i class="far fa-calendar-check" id="icone1" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
+                  <p>O detinat.io foi pensado exatamente para otimizar a alocação de salas, de modo a minimizar a quantidade de choques de disciplinas alocadas na mesma sala, no mesmo dia e mesmo horário.</p>
               </div>
 
               <div class="col-sm-4">
                   <i class="far fa-edit" id="icone2" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
+                  <p>Através de um algoritimo de inteligência artificial, o software fará uma alocação de modo a minimizar a quantidade de choque de alocações, sendo o objetivo encontrar a quantidade de choques igual a zero.</p>
               </div>
 
               <div class="col-sm-4">
                   <i class="far fa-file" id="icone3" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
+                  <p>A alocação gerada informa a quantidade de choques que o resultado final gerou e as disciplinas que estão chocando (se houver). </p>
               </div>
 
             </div>
