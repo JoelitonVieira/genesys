@@ -326,19 +326,19 @@
               <div class="col-sm-4">
                   <i class="far fa-calendar-check" id="icone1" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>Este sistema possui sistema para cadastro de professor, sala e disciplina.</p>
+                  <p>O detinat.io foi pensado exatamente para otimizar a alocação de salas, de modo a minimizar a quantidade de choques de disciplinas alocadas na mesma sala, no mesmo dia e mesmo horário.</p>
               </div>
 
               <div class="col-sm-4">
                   <i class="far fa-edit" id="icone2" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>Mesmo após realizada a alocação<br> a mesma pode ser editada.</p>
+                  <p>Através de um algoritimo de inteligência artificial, o software fará uma alocação de modo a minimizar a quantidade de choque de alocações, sendo o objetivo encontrar a quantidade de choques igual a zero.</p>
               </div>
 
               <div class="col-sm-4">
                   <i class="far fa-file" id="icone3" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>O destinatio gera um relatório contendo todas as informações da alocação.</p>
+                  <p>A alocação gerada informa a quantidade de choques que o resultado final gerou e as disciplinas que estão chocando (se houver). </p>
               </div>
 
             </div>
