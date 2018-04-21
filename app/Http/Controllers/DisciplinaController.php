@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Disciplina;
 use App\Dia;
+use App\Http\Requests\StoreDisciplina;
 
 class DisciplinaController extends Controller
 {
@@ -16,27 +17,31 @@ class DisciplinaController extends Controller
       ->with('i', (request()->input('page', 1) - 1) * 5);
   }
 
-  public function store(Request $request){
+  public function store(StoreDisciplina $request){
     $disciplina = Disciplina::create($request->all());
     $dias = new Dia();
     foreach ($request->dia as $dia) {
-    if ($dia == "seg") { $dias->seg = 1; }
-    elseif ( $dia == "ter" ) { $dias->ter = 1; }
-    elseif ( $dia == "quar" ) { $dias->quar = 1; }
-    elseif ( $dia == "quin" ) { $dias->quin = 1; }
-    elseif ( $dia == "sex" ) { $dias->sex = 1; }
-    elseif ( $dia == "sab" ) { $dias->sab = 1; }
+      if ($dia == "seg") { $dias->seg = 1; }
+      elseif ( $dia == "ter" ) { $dias->ter = 1; }
+      elseif ( $dia == "quar" ) { $dias->quar = 1; }
+      elseif ( $dia == "quin" ) { $dias->quin = 1; }
+      elseif ( $dia == "sex" ) { $dias->sex = 1; }
+      elseif ( $dia == "sab" ) { $dias->sab = 1; }
     }
     $dias->disciplinaId = $disciplina->id;
     $disciplina->dia()->save($dias);
     return redirect()->route('disciplina.index')->with('success','Disciplina Cadastrada com Sucesso!');
   }
 
+  public function show(Disciplina $disciplina) {
+        return view('admin.disciplina.show', compact('disciplina'));
+    }
+
   public function edit(Disciplina $disciplina) {
-      return view('admin.editar.index', compact('disciplina'));
+      return view('admin.disciplina.edit', compact('disciplina'));
   }
 
-  public function update(Request $request, $id) {
+  public function update(StoreDisciplina $request, $id) {
     $disciplina = Disciplina::find($id);
     $disciplina->update($request->all());
     $dias = $disciplina->dia;

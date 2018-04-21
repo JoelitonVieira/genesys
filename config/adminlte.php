@@ -108,50 +108,21 @@ return [
     */
 
     'menu' => [
-
-        [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
         [
             'text'        => 'Início',
             'url'         => 'admin',
             'icon'        => 'home',
-            'label'       => 2,
-            'label_color' => 'danger',
         ],
         'DADOS',
         [
-            'text'    => 'Cadastro de Dados',
-            'icon'    => 'table',
-            'submenu' => [
-                [
-                    'text'        => 'Cadastro de Professor',
-                    'url'         => 'professor',
-                    'icon'        => 'graduation-cap',
-                ],
-                [
-                    'text'        => 'Cadastro de Turma',
-                    'url'         => 'turma',
-                    'icon'        => 'users',
-                ],
-                [
-                    'text'        => 'Cadastro de Disciplina',
-                    'url'         => 'disciplina',
-                    'icon'        => 'bookmark',
-                ],
-                [
-                    'text'        => 'Cadastro de Sala/Laboratório',
-                    'url'         => 'sala',
-                    'icon'        => 'globe',
-                ],
-                [
-                    'text'        => 'Editar Existentes',
-                    'url'         => 'editar',
-                    'icon'        => 'edit',
-                ],
-            ],
+            'text'        => 'Cadastro de Disciplina',
+            'url'         => 'disciplina',
+            'icon'        => 'bookmark',
+        ],
+        [
+            'text'        => 'Cadastro de Sala/Laboratório',
+            'url'         => 'sala',
+            'icon'        => 'globe',
         ],
         'ALOCAÇÃO',
         [
@@ -160,25 +131,17 @@ return [
             'icon'        => 'mouse-pointer',
         ],
         [
-            'text'        => 'Gerar Relatório',
+            'text'        => 'Visualizar Relatório',
             'url'         => 'relatorio',
             'icon'        => 'file',
         ],
+        'OPÇÕES',
         [
             'text' => 'Ajuda',
             'url'  => 'ajuda',
             'icon' => 'question-circle'
 
         ],
-        [
-            'text' => 'Contato',
-            'url'  => 'contato',
-            'icon' => 'address-book'
-
-        ],
-
-
-
     ],
 
     /*
