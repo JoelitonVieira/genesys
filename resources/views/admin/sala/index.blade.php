@@ -3,7 +3,7 @@
 
 @section('title', 'Cadastro de Salas e Laboratórios')
 
-@section('content_header
+@section('content_header')
 
 <div class ="header"><h1 style="color:white;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">SALAS E LABORATÓRIOS</h1><br/></div>
 

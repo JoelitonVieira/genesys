@@ -13,4 +13,4 @@ yarn-error.log
 .env
 
 
-app/Http/Controllers/Alocacao/
+app/Http/Controllers/Alocacao
