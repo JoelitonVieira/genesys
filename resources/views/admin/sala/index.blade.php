@@ -5,7 +5,7 @@
 
 @section('content_header')
 
-<div class ="header"><h1 style="color:white;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">SALAS E LABORATÓRIOS</h1><br/></div>
+<div class ="header left"><p style="border-left:3px solid #00A65A;color:#141414;font-size:200%;padding:6px;">&nbsp Cadastrar Sala/Laboratório</p><br/></div>
 
 @stop
 
@@ -19,17 +19,14 @@
   <p>{{ $message }}</p>
 </div>
 @endif
-<div class="row">
+<div class="row ">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="header">
-      <h4 class="pageHeader">CADASTRAR SALA/LABORATÓRIO</h4>
-    </div>
     <form action="{{action('SalaController@store')}}" method="POST" >
     {{ csrf_field() }}
       <div class="box-body">
         <div class="form-group has-feedback {{ $errors->has('nome') ? 'has-error' : '' }}">
-          <label for="name">Nome:</label></br>
-          <input type="text" name="nome" placeholder="Nome da Sala/Laboratório" class="form-control">
+          <p for="name" style="color:#141414;">Nome</p>
+          <input type="text" name="nome" style="margin-top:0px;border:none; border-bottom: 1px solid #00A65A; border-radius: 0px;" placeholder="Nome da Sala/Laboratório" class="form-control">
           @if ($errors->has('nome'))
             <span class="help-block">
                 <strong>{{ $errors->first('nome') }}</strong>
@@ -38,13 +35,13 @@
         </div>
 
         <div class="form-group">
-          <label for="name">Tipo:</label></br>
+          <p for="name" style="color:#141414;">Tipo</p>
           <select class="selectpicker" name="tipo">
-            <option value="Sala Comum"  class="optionSelect" selected="selected">Sala Comum</option>
-            <option value="Laboratório" class="optionSelect">Laboratório</option>
+            <option value="Sala Comum"  class="optionSelect" selected="selected">SALA COMUM</option>
+            <option value="Laboratório" class="optionSelect">LABORATÓRIO</option>
           </select>
         </div>
-        <button class="buttonSalvar"><span>SALVAR</span></button>
+        <button class="buttonSalvar" style="border-radius: 0px;background-color:#00A65A;"><span>SALVAR</span></button>
       </div>
     </form>
   </div>
@@ -52,15 +49,14 @@
 </br>
 
 <div class="row">
+<br>
   <div class="col-md-12">
-    <div class="header">
-      <h4 class="pageHeader">SALAS/LABORATÓRIOS EXISTENTES</h4>
-    </div>
-    <div class="body table-responsive">
-      <table class="table table-dark table-striped table-bordered table-hover">
+    <div class ="header left"><h1 style="border-left:3px solid #00A65A;color:#141414;font-size:200%;padding:6px;">&nbsp Salas/Laboratórios existentes</h1><br/></div><br>
+    <div class="body table-responsive" >
+      <table class="table table-dark table-striped table-bordered table-hover" style="margin-top: 0px; border:none;">
         <thead>
-          <tr style="background-color:#616161">
-            <th  scope="col" style="color:white">#</th>
+          <tr style="background-color:#00A65A">
+            <th  scope="col" style="color:white">ID</th>
             <th  scope="col" style="color:white">NOME</th>
             <th scope="col" style="color:white">TIPO</th>
             <th class="text-center" scope="col" style="color:white" width="28%">OPÇÕES</th>
@@ -73,9 +69,9 @@
             <td>{{ $sala->nome }}</td>
             <td>{{ $sala->tipo }}</td>
             <td class="text-center">
-            	<a class="btn btn-primary" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> EDITAR</a>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
-              <i class="fa fa-close"></i> DELETAR
+            	<a class="btn btn-primary" style="background-color:#00A65A; border:none; border-radius: 0px;" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> Editar</a>
+              <button type="button" class="btn btn-danger" style="background-color:red; border:none; border-radius: 0px;" data-toggle="modal" data-target="#modal-danger">
+              <i class="fa fa-close"></i> Deletar
               </button>
           	</td>
           </tr>
