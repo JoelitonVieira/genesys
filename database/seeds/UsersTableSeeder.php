@@ -12,10 +12,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User:create([
-          'name' => 'Joeliton Vieira',
-          'email' => 'joeliton.matos@gmail.com',
-          'password' = > bscrypt('exemplo'),
-        ]);
+        
     }
 }

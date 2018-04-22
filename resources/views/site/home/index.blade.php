@@ -266,7 +266,7 @@
             document.getElementById("imgPatrick").style.width = "100px";
             document.getElementById("imgPatrick").style.transition = "0.5s";
             document.getElementById("imgPatrick").style.filter = "grayscale(100%)";
-            document.getElementById("imgPatrick").src = "https://imgur.com/f9I96SR.png"; 
+            document.getElementById("imgPatrick").src = "https://imgur.com/f9I96SR.png";
 
         }
 
@@ -275,7 +275,7 @@
             document.getElementById("imgVitor").style.width = "100px";
             document.getElementById("imgVitor").style.transition = "0.5s";
             document.getElementById("imgVitor").style.filter = "grayscale(100%)";
-            document.getElementById("imgVitor").src = "https://imgur.com/XLrW4ir.png"; 
+            document.getElementById("imgVitor").src = "https://imgur.com/XLrW4ir.png";
 
         }
 
@@ -326,7 +326,7 @@
               <div class="col-sm-4">
                   <i class="far fa-calendar-check" id="icone1" style="font-size: 0px; color:#26b454;"></i>
                   <br><br>
-                  <p>O detinat.io foi pensado exatamente para otimizar a alocação de salas, de modo a minimizar a quantidade de choques de disciplinas alocadas na mesma sala, no mesmo dia e mesmo horário.</p>
+                  <p>O destinat.io foi pensado exatamente para otimizar a alocação de salas, de modo a minimizar a quantidade de choques de disciplinas alocadas na mesma sala, no mesmo dia e mesmo horário.</p>
               </div>
 
               <div class="col-sm-4">

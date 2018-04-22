@@ -3,8 +3,9 @@
 
 @section('title', 'Cadastro de Salas e Laboratórios')
 
-@section('content_header')
-<div class ="header"><h1 style="color:WHITE;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">SALAS E LABORATÓRIOS</h1><br/></div>
+@section('content_header
+
+<div class ="header"><h1 style="color:white;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">SALAS E LABORATÓRIOS</h1><br/></div>
 
 @stop
 
@@ -23,33 +24,29 @@
     <div class="header">
       <h4 class="pageHeader">CADASTRAR SALA/LABORATÓRIO</h4>
     </div>
-    <div style="border:1.0px solid #444">
-      <form action="{{action('SalaController@store')}}" method="POST" >
-      {{ csrf_field() }}
-        <div class="box-body">
-          <div class="form-group has-feedback {{ $errors->has('nome') ? 'has-error' : '' }}">
-            <label for="name">Nome:</label></br>
-            <input type="text" name="nome" placeholder="Nome da Sala/Laboratório" class="form-control">
-            @if ($errors->has('nome'))
-              <span class="help-block">
-                  <strong>{{ $errors->first('nome') }}</strong>
-              </span>
-            @endif
-          </div>
-
-          <div class="form-group">
-            <label for="name">Tipo:</label></br>
-            <select class="selectpicker" name="tipo">
-              <option value="Sala Comum"  class="optionSelect" selected="selected">Sala Comum</option>
-              <option value="Laboratório" class="optionSelect">Laboratório</option>
-            </select>
-          </div>
-
-          <button class="buttonSalvar"><span>SALVAR</span></button>
-
+    <form action="{{action('SalaController@store')}}" method="POST" >
+    {{ csrf_field() }}
+      <div class="box-body">
+        <div class="form-group has-feedback {{ $errors->has('nome') ? 'has-error' : '' }}">
+          <label for="name">Nome:</label></br>
+          <input type="text" name="nome" placeholder="Nome da Sala/Laboratório" class="form-control">
+          @if ($errors->has('nome'))
+            <span class="help-block">
+                <strong>{{ $errors->first('nome') }}</strong>
+            </span>
+          @endif
         </div>
-      </form>
-    </div>
+
+        <div class="form-group">
+          <label for="name">Tipo:</label></br>
+          <select class="selectpicker" name="tipo">
+            <option value="Sala Comum"  class="optionSelect" selected="selected">Sala Comum</option>
+            <option value="Laboratório" class="optionSelect">Laboratório</option>
+          </select>
+        </div>
+        <button class="buttonSalvar"><span>SALVAR</span></button>
+      </div>
+    </form>
   </div>
 </div>
 </br>
@@ -76,7 +73,7 @@
             <td>{{ $sala->nome }}</td>
             <td>{{ $sala->tipo }}</td>
             <td class="text-center">
-            	<a class="btn btn-info" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> EDITAR</a>
+            	<a class="btn btn-primary" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> EDITAR</a>
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
               <i class="fa fa-close"></i> DELETAR
               </button>

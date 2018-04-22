@@ -19,9 +19,8 @@ class SalaController extends Controller
   }
 
   public function store(StoreSala $request){
-    Sala::create($request->all());    
+    Sala::create($request->all());
     return redirect()->route('sala.index')->with('success','Sala Cadastrada Com Sucesso!');
-    $validated = $request->validated();
   }
 
   public function edit(Sala $sala) {
