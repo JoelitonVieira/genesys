@@ -3,9 +3,8 @@
 @section('title', 'Visualizar Relatório')
 
 @section('content_header')
-
+<link rel="stylesheet" type="text/css" href="{{ asset('css/print.css') }}" media="print" />
 <div class ="header"><h1 style="color:white;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">VISUALIZAR RELATÓRIO</h1><br/></div>
-
 
 @stop
 
@@ -22,6 +21,7 @@
 <div class="box-body">
   <p><b>Quantidade de choque de alocações: </b><span style="color:red">{{ $diasDeChoques_Salas[1]->choques }}</span></p>
   <p>Obs: Caso existam, os dias em vermelho e sublinhados significam que, para aquela disciplina, há choque de alocação com outra(s) disciplina(s).</p>
+  <button class="btn btn-primary" onclick="window.print()" id="botaoImprimir" style="float:right"><i class="fa fa-print"></i></button></br></br></br>
   <div class="body table-responsive" >
     <table class="table table-dark table-striped table-bordered table-hover" style="margin-top: 0px; border:none;">
       <thead>

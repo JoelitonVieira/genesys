@@ -10,7 +10,7 @@ $this->group(['middleware' => ['auth']], function(){
     Route::get('alocacao', 'AlocacaoController@gerar')->name('alocacao');
     Route::get('alocacao.index', 'AlocacaoController@index')->name('alocacao.index');
     Route::get('alocacao.erro', 'AlocacaoController@index2')->name('alocacao.erro');
-
+    Route::any('sala.search', 'SalaController@search');
 
 });
 

@@ -52,6 +52,18 @@
 <br>
   <div class="col-md-12">
     <div class ="header left"><h1 style="border-left:3px solid #00A65A;color:#141414;font-size:200%;padding:6px;">&nbsp Salas/Laboratórios existentes</h1><br/></div><br>
+    <form action="{{action('SalaController@search')}}" method="POST">
+      {{ csrf_field() }}
+      <div class="form-group">
+        <select class="selectpicker" name="modo" placeholder="Escolha o Modo">
+          <option value="nome"  class="optionSelect">POR NOME</option>
+          <option value="tipo" class="optionSelect">POR TIPO</option>
+        </select>
+        <input type="text" name="pesquisa" style="border: 1px solid #00A65A" class="form-control"  placeholder="Digite aqui">
+        <button class="buttonSalvar" style="border-radius: 0px;background-color:#00A65A;"><span>PESQUISAR</span></button>
+      </div>
+    </form>
+
     <div class="body table-responsive" >
       <table class="table table-dark table-striped table-bordered table-hover" style="margin-top: 0px; border:none;">
         <thead>
@@ -102,11 +114,14 @@
           </div>
         @endforeach
       </table>
-      {!! $salas->links() !!}
+      @if ( isset( $dataform ) )
+        {!! $salas->appends($dataform)->links() !!}
+      @else
+        {!! $salas->links() !!}
+      @endif
     </div>
   </div>
 </div>
-<div class="box">
 
 
 

@@ -39,4 +39,15 @@ class SalaController extends Controller
       $sala->delete();
       return redirect()->route('sala.index')->with('success','Sala Deletada com Sucesso!');
   }
+
+  public function search(Request $request) {
+      if ( $request->modo == "nome" )  {
+        $salas = Sala::where('nome', 'like', $request->pesquisa)->paginate(5);
+      } else {
+        $salas = Sala::where('tipo', 'like', $request->pesquisa)->paginate(5);
+      }
+      $dataform = $request->except('_token');
+      return view('admin.sala.index', compact('salas', 'dataform'))
+      ->with('i', (request()->input('page', 1) - 1) * 5);
+  }
 }

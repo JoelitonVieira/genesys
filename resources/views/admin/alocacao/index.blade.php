@@ -36,7 +36,7 @@
       <option value="Laboratório" class="optionSelect" disabled="disabled">Sala/Laboratório</option>
     </select>
   </div>
-  <button class="buttonSalvar" onclick="location.href='{{ route('alocacao') }}';"><span>GERAR </span></button>
+  <button class="buttonSalvar" onclick="location.href='{{ route('alocacao') }}'"><span>GERAR </span></button>
 </div>
 
 @if ( isset ( $message2 ) )
