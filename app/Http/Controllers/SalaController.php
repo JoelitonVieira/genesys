@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Sala;
 use App\Http\Requests\StoreSala;
+use Validator;
 
 
 
@@ -31,7 +32,6 @@ class SalaController extends Controller
       $sala = Sala::find($id);
       $sala->update($request->all());
       return redirect()->route('sala.index')->with('success','Sala Atualizada com Sucesso!');
-      $validated = $request->validated();
   }
 
   public function destroy($id) {
@@ -41,11 +41,20 @@ class SalaController extends Controller
   }
 
   public function search(Request $request) {
-      if ( $request->modo == "nome" )  {
-        $salas = Sala::where('nome', 'like', $request->pesquisa)->paginate(5);
-      } else {
-        $salas = Sala::where('tipo', 'like', $request->pesquisa)->paginate(5);
+      $validator = Validator::make($request->all(), [
+          'pesquisa' => 'required',
+      ]);
+      if ($validator->fails()) {
+            return redirect()->route('sala.index')
+                        ->withErrors($validator)
+                        ->withInput();
       }
+      if ( $request->modo == "nome" )  {
+        $salas = Sala::where('nome', 'like', '%'.$request->pesquisa.'%')->paginate(5);
+      } else {
+        $salas = Sala::where('tipo', 'like', '%'.$request->pesquisa.'%')->paginate(5);
+      }
+      $request->flash();
       $dataform = $request->except('_token');
       return view('admin.sala.index', compact('salas', 'dataform'))
       ->with('i', (request()->input('page', 1) - 1) * 5);

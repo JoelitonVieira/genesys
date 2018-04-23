@@ -50,20 +50,32 @@
 
 <div class="row">
 <br>
-  <div class="col-md-12">
     <div class ="header left"><h1 style="border-left:3px solid #00A65A;color:#141414;font-size:200%;padding:6px;">&nbsp Salas/Laboratórios existentes</h1><br/></div><br>
     <form action="{{action('SalaController@search')}}" method="POST">
       {{ csrf_field() }}
-      <div class="form-group">
-        <select class="selectpicker" name="modo" placeholder="Escolha o Modo">
-          <option value="nome"  class="optionSelect">POR NOME</option>
-          <option value="tipo" class="optionSelect">POR TIPO</option>
-        </select>
-        <input type="text" name="pesquisa" style="border: 1px solid #00A65A" class="form-control"  placeholder="Digite aqui">
+      <div class="col-md-3">
+        <div class="form-group">
+          <select class="selectpicker" name="modo" placeholder="Escolha o Modo">
+            <option value="nome"  class="optionSelect">POR NOME</option>
+            <option value="tipo" class="optionSelect">POR TIPO</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group has-feedback {{ $errors->has('pesquisa') ? 'has-error' : '' }}">
+          <input  type="text" name="pesquisa" style="border: 1px solid #00A65A" class="form-control"  placeholder="Digite aqui" value="{{ old('pesquisa') }}">
+          @if ($errors->has('pesquisa'))
+            <span class="help-block">
+                <strong>{{ $errors->first('pesquisa') }}</strong>
+            </span>
+          @endif
+        </div>
+      </div>
+      <div class="col-md-3">
         <button class="buttonSalvar" style="border-radius: 0px;background-color:#00A65A;"><span>PESQUISAR</span></button>
       </div>
-    </form>
-
+  </form>
+</br></br></br>
     <div class="body table-responsive" >
       <table class="table table-dark table-striped table-bordered table-hover" style="margin-top: 0px; border:none;">
         <thead>
@@ -82,7 +94,7 @@
             <td>{{ $sala->tipo }}</td>
             <td class="text-center">
             	<a class="btn btn-primary" style="background-color:#00A65A; border:none; border-radius: 0px;" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> Editar</a>
-              <button type="button" class="btn btn-danger" style="background-color:red; border:none; border-radius: 0px;" data-toggle="modal" data-target="#modal-danger">
+              <button type="button" class="btn btn-danger" style="background-color:red; border:none; border-radius: 0px;" data-toggle="modal" data-target="#modalConfirmDelete">
               <i class="fa fa-close"></i> Deletar
               </button>
           	</td>
@@ -116,8 +128,10 @@
       </table>
       @if ( isset( $dataform ) )
         {!! $salas->appends($dataform)->links() !!}
+        <b>{{"Total de Resultados: "}}</b>{{count( $salas ) }}
       @else
         {!! $salas->links() !!}
+        <b>{{"Total de Salas: "}}</b>{{ count( $salas ) }}
       @endif
     </div>
   </div>

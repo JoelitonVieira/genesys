@@ -66,5 +66,6 @@
 <script src="{{ asset('vendor/adminlte/vendor/bootstrap/dist/js/bootstrap-select.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
+
 </body>
 </html>

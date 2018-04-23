@@ -102,6 +102,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'pesquisa' => [
+            'required' => 'Você precisa digitar alguma coisa antes de pesquisar.',
+        ],
     ],
 
     /*
