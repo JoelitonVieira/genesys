@@ -25,8 +25,8 @@ class StoreDisciplina extends FormRequest
     public function rules()
     {
       return [
-          'nome' => 'required|unique:disciplinas,nome,'.$this->disciplina,
-          'codigo' => 'nullable|unique:disciplinas,codigo,'.$this->disciplina,
+          'nome' => 'required',
+          'codigo' => 'required',
           'turma' => 'required',
           'professor' => 'required',
       ];

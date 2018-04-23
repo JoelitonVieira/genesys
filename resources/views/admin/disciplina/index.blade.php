@@ -72,12 +72,12 @@
         <div class="form-group">
           <label for="name">Hórario:</label></br>
           <select class="selectpicker" name="horario">
-            <option value="primeiro" class="optionSelect" selected="selected">1º</option>
-            <option value="segundo" class="optionSelect">2º</option>
-            <option value="terceiro" class="optionSelect">3º</option>
-            <option value="quarto" class="optionSelect">4º</option>
-            <option value="quinto" class="optionSelect">5º</option>
-            <option value="sexto" class="optionSelect">6º</option>
+            <option value="Primeiro" class="optionSelect" selected="selected">1º</option>
+            <option value="Segundo" class="optionSelect">2º</option>
+            <option value="Terceiro" class="optionSelect">3º</option>
+            <option value="Quarto" class="optionSelect">4º</option>
+            <option value="Quinto" class="optionSelect">5º</option>
+            <option value="Sexto" class="optionSelect">6º</option>
           </select>
         </div>
         <div class="form-group">

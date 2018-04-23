@@ -10,7 +10,8 @@ class DiasdeChoques_Sala extends Model
   public $incrementing = true;
 
   protected $fillable = [
-    'nome',
+    'nm_sala',
+    'choques',
     'seg',
     'ter',
     'quar',

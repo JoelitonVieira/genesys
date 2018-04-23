@@ -16,6 +16,16 @@ use App\DiasdeChoques_Sala;
 
 class AlocacaoController extends Controller
 {
+  public function index()
+  {
+    return view('admin.alocacao.index');
+  }
+
+  public function index2()
+  {
+    $message = "Ops! Você precisa cadastrar pelo menos uma disciplina e uma sala antes de gerar alguma alocação!";
+    return view('admin.alocacao.index', compact('message'));
+  }
 
   public function gerar()
   {
@@ -60,9 +70,10 @@ class AlocacaoController extends Controller
 
         $temp *= 1 - $refrigeracao;
       }
+      DiasdeChoques_Sala::query()->delete(); // Deletando dados se alguma alocação já existe
       for ( $i = 0 ; $i < sizeof( $melhorSolucao->gradeSalaAlocada ) ; $i++) {
         $choquesSalas = new DiasdeChoques_Sala();
-        $choquesSalas->nome = $melhorSolucao->gradeSalaAlocada[$i]->__toString();
+        $choquesSalas->nm_sala = $melhorSolucao->gradeSalaAlocada[$i]->__toString();
         if ( isset( $melhorSolucao->gradeChoques[$i] ) ) {
           foreach ($melhorSolucao->gradeChoques[$i] as $choque) {//
             if ($choque == "seg") { $choquesSalas->seg = 1; }
@@ -73,14 +84,14 @@ class AlocacaoController extends Controller
             elseif ( $choque == "sab" ) { $choquesSalas->sab = 1; }
           }
         }
+        $choquesSalas->choques = $melhorSolucao->choques();
         $choquesSalas->save();
       }
 
-      $message = "Alocação gerada com sucesso!";
-      return view('admin.alocacao.index', compact('melhorSolucao'));
+      $message2 = "Alocação gerada com sucesso!";
+      return view('admin.alocacao.index', compact('melhorSolucao','message2'));
     }else {
-      $message = "Você precisa cadastrar pelo menos uma disciplina e uma sala antes de gerar alguma alocação!";
-      return view('admin.alocacao.index', compact('message'));
+      return redirect()->route('alocacao.erro');
     }
   }
 

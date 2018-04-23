@@ -127,7 +127,7 @@ return [
         'ALOCAÇÃO',
         [
             'text'        => 'Gerar Alocação',
-            'url'         => 'alocacao',
+            'url'         => 'alocacao.index',
             'icon'        => 'mouse-pointer',
         ],
         [

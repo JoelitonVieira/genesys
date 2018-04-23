@@ -17,7 +17,7 @@ class CreateDisciplinasTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('nome');
-            $table->string('codigo')->nullable();
+            $table->string('codigo');
             $table->string('turma');
             $table->string('professor');
             $table->string('horario');

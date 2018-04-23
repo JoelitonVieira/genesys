@@ -15,7 +15,8 @@ class CreateDiasdeChoquesSalasTable extends Migration
     {
         Schema::create('diasde_choques__salas', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('nome');
+          $table->string('nm_sala');
+          $table->string('choques')->default('0');
           $table->string('seg')->default('0');
           $table->string('ter')->default('0');
           $table->string('quar')->default('0');
