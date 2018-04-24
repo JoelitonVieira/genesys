@@ -4,6 +4,13 @@
  */
 /* skin-black navbar */
 /*TELAS*/
+/*Formatação para impressão*/
+@media print {
+  #botaoImprimir {
+  display:none
+  }
+    
+}
 /*Classe dos títulos das páginas*/
 .pageHeader{
 

@@ -39,11 +39,6 @@
   <button class="buttonSalvar" onclick="location.href='{{ route('alocacao') }}'"><span>GERAR </span></button>
 </div>
 
-@if ( isset ( $message2 ) )
-Quantidade de choques da alocação final: {!! $melhorSolucao->choques() !!}</br>
-Resultado das Alocações: </br>NOME &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp DIAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp HORA &nbsp&nbsp&nbsp SALA</br>{!! $melhorSolucao !!}
-@endif
-
 @stop
 
 @section('js')

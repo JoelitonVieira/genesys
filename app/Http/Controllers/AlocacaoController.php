@@ -89,7 +89,7 @@ class AlocacaoController extends Controller
       }
 
       $message2 = "Alocação gerada com sucesso!";
-      return view('admin.alocacao.index', compact('melhorSolucao','message2'));
+      return view('admin.alocacao.index', compact('message2'));
     }else {
       return redirect()->route('alocacao.erro');
     }
