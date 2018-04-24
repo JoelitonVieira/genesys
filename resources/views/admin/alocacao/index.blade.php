@@ -4,8 +4,10 @@
 
 @section('content_header')
 
-<div class ="header"><h1 style="color:white;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">GERAR ALOCAÇÃO</h1><br/></div>
-
+<div class ="header text-center">
+  <p style="color:white; background: linear-gradient(to right, #00ab5d , #00eb7f);font-size:25px; padding:13px 0px 13px 0px;">Gerar Alocação</p><br/><br/><br/>
+</div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 @stop
 
 @section('content')
@@ -27,16 +29,21 @@
   <a href="{{route('relatorio.index')}}">Clique aqui para visualizar o relatório</a> com a alocação gerada.
 </div>
 @endif
-
-<div class="box-body">
-  <div class="form-group">
-    <label for="name">Modo:</label></br>
-    <select class="selectpicker" name="tipo">
-      <option value="Sala Comum" class="optionSelect" selected="selected">Sala</option>
-      <option value="Laboratório" class="optionSelect" disabled="disabled">Sala/Laboratório</option>
-    </select>
+<div class="row">
+  <div class="col-md-10">
+    <div class="form-group">
+      <p for="name" style="color:#141414;">Modo</p>
+      <select class="selectpicker" name="tipo">
+        <option value="Sala Comum" class="optionSelect" selected="selected">Sala</option>
+        <option value="Laboratório" class="optionSelect" disabled="disabled">Sala/Laboratório</option>
+      </select>
+    </div>
+    <button class="buttonSalvar" style="border-radius: 0px;background-color:#00A65A;" onclick="location.href='{{ route('alocacao') }}'"><span>GERAR </span></button>
   </div>
-  <button class="buttonSalvar" onclick="location.href='{{ route('alocacao') }}'"><span>GERAR </span></button>
+
+  <div class="col-md-1">
+    <i class="fas fa-mouse-pointer" style="font-size:80px;color:#00e77d;"></i>
+  </div>
 </div>
 
 @stop

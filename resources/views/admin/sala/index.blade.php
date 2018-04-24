@@ -5,7 +5,11 @@
 
 @section('content_header')
 
-<div class ="header left"><p style="border-left:3px solid #00A65A;color:#141414;font-size:200%;padding:6px;">&nbsp Cadastrar Sala/Laboratório</p><br/></div>
+<div class ="header text-center">
+      <p style="color:white; background: linear-gradient(to right, #00ab5d , #00eb7f);font-size:25px; padding:13px 0px 13px 0px;"></span>Cadastrar Sala/Laboratório</p><br/>
+</div>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
 @stop
 
@@ -20,13 +24,13 @@
 </div>
 @endif
 <div class="row ">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div class="col-md-10">
     <form action="{{action('SalaController@store')}}" method="POST" >
     {{ csrf_field() }}
       <div class="box-body">
         <div class="form-group has-feedback {{ $errors->has('nome') ? 'has-error' : '' }}">
-          <p for="name" style="color:#141414;">Nome</p>
-          <input type="text" name="nome" style="margin-top:0px;border:none; border-bottom: 1px solid #00A65A; border-radius: 0px;" placeholder="Nome da Sala/Laboratório" class="form-control">
+          <p for="name" style="color:#141414;">Informe o nome</p>
+          <input type="text" name="nome" style="margin-top:0px;border:none; border-bottom: 1px solid #00A65A; border-radius: 0px;" placeholder="Sala/Laboratório" class="form-control">
           @if ($errors->has('nome'))
             <span class="help-block">
                 <strong>{{ $errors->first('nome') }}</strong>
@@ -45,41 +49,59 @@
       </div>
     </form>
   </div>
-</div>
-</br>
 
-<div class="row">
-<br>
-    <div class ="header left"><h1 style="border-left:3px solid #00A65A;color:#141414;font-size:200%;padding:6px;">&nbsp Salas/Laboratórios existentes</h1><br/></div><br>
-    <form action="{{action('SalaController@search')}}" method="POST">
+  <div class="col-md-1">
+    <br><br>
+    <span class="glyphicon glyphicon-edit" aria-hidden="true" style="font-size:80px;color:#00e77d;"></span>
+  </div>
+</div>
+
+<br/><br/><br/>
+<div class ="header text-center">
+      <p style="color:white; background: linear-gradient(to right, #00ab5d , #00eb7f);font-size:25px; padding:13px 0px 13px 0px;">Salas/Laboratórios existentes</p><br/><br/><br/>
+</div>
+
+<form action="{{action('SalaController@search')}}" method="POST">
       {{ csrf_field() }}
-      <div class="col-md-3">
+  
+    <div class="row">
+
+      <div class="col-sm-10"> 
+        <div class="form-group has-feedback {{ $errors->has('pesquisa') ? 'has-error' : '' }}">
+          <p for="name" style="color:#141414;">Informe a sala/laboratório</p>
+          <input  type="text" name="pesquisa" style="margin-top:0px;border:none; border-radius:0px;border-bottom:1px solid #00A65A" class="form-control"  placeholder="Por nome/tipo" value="{{ old('pesquisa') }}">
+            @if ($errors->has('pesquisa'))
+            <span class="help-block">
+                <strong>{{ $errors->first('pesquisa') }}</strong>
+            </span>
+          @endif
+        </div>
+
         <div class="form-group">
+          <p for="name" style="color:#141414;">Escolha o Modo</p>
           <select class="selectpicker" name="modo" placeholder="Escolha o Modo">
             <option value="nome"  class="optionSelect">POR NOME</option>
             <option value="tipo" class="optionSelect">POR TIPO</option>
           </select>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group has-feedback {{ $errors->has('pesquisa') ? 'has-error' : '' }}">
-          <input  type="text" name="pesquisa" style="border: 1px solid #00A65A" class="form-control"  placeholder="Digite aqui" value="{{ old('pesquisa') }}">
-          @if ($errors->has('pesquisa'))
-            <span class="help-block">
-                <strong>{{ $errors->first('pesquisa') }}</strong>
-            </span>
-          @endif
+
+        <div class="col-md-1">
+          <br><br>
+          <span class="glyphicon glyphicon-list" aria-hidden="true" style="font-size:80px;color:#00e77d;"></span>
         </div>
-      </div>
-      <div class="col-md-3">
-        <button class="buttonSalvar" style="border-radius: 0px;background-color:#00A65A;"><span>PESQUISAR</span></button>
-      </div>
-  </form>
-</br></br></br>
+    </div>
+    <br>
+    <button class="buttonSalvar" style="border-radius: 0px;background-color:#00A65A;"><span>PESQUISAR</span></button>
+</form>
+
+
+<br/><br/><br/>
+
     <div class="body table-responsive" >
       <table class="table table-dark table-striped table-bordered table-hover" style="margin-top: 0px; border:none;">
         <thead>
-          <tr style="background-color:#00A65A">
+          <tr style="background-color:#333333">
             <th  scope="col" style="color:white">ID</th>
             <th  scope="col" style="color:white">NOME</th>
             <th scope="col" style="color:white">TIPO</th>
@@ -93,7 +115,7 @@
             <td>{{ $sala->nome }}</td>
             <td>{{ $sala->tipo }}</td>
             <td class="text-center">
-            	<a class="btn btn-primary" style="background-color:#00A65A; border:none; border-radius: 0px;" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> Editar</a>
+            	<a class="btn btn-primary" style="background-color:#00e079; border:none; border-radius: 0px;" href="{{ route('sala.edit', $sala) }}"><i class="fa fa-edit"></i> Editar</a>
               <button type="button" class="btn btn-danger" style="background-color:red; border:none; border-radius: 0px;" data-toggle="modal" data-target="#modalConfirmDelete">
               <i class="fa fa-close"></i> Deletar
               </button>

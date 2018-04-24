@@ -122,7 +122,7 @@ return [
         [
             'text'        => 'Cadastro de Sala/Laboratório',
             'url'         => 'sala',
-            'icon'        => 'globe',
+            'icon'        => 'edit',
         ],
         'ALOCAÇÃO',
         [
