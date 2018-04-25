@@ -19,4 +19,9 @@ class DiasdeChoques_Sala extends Model
     'sex',
     'sab',
   ];
+
+  public function user()
+  {
+      return $this->belongsTo(User::class);
+  }
 }

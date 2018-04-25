@@ -15,6 +15,8 @@ class CreateSalasTable extends Migration
     {
         Schema::create('salas', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('tipo');
             $table->string('nome');
             $table->timestamps();

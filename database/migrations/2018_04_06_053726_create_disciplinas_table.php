@@ -15,13 +15,15 @@ class CreateDisciplinasTable extends Migration
     {
         Schema::create('disciplinas', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nome');
             $table->string('codigo');
             $table->string('turma');
             $table->string('professor');
             $table->string('horario');
             $table->string('turno');
+            $table->timestamps();
         });
     }
 

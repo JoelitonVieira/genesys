@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sala()
+    {
+        return $this->hasMany(Sala::class);
+    }
+
+    public function disciplina()
+    {
+        return $this->hasMany(Disciplina::class);
+    }
+
+    public function diasdechoques_sala()
+    {
+        return $this->hasMany(DiasdeChoques_Sala::class);
+    }
 }

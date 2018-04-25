@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Disciplina;
 use App\DiasdeChoques_Sala;
+use Illuminate\Support\Facades\Auth;
 
 class RelatorioController extends Controller
 {
   public function index()
   {
-    if ( sizeof( DiasdeChoques_Sala::get() ) > 0 ) { //Verificando se existe alguma alocação
-      $disciplinas = Disciplina::orderBy('turno','asc')->get();
-      $diasDeChoques_Salas = DiasdeChoques_Sala::get();//Variável que contém os dias de choque de cada disciplina, a sala alocada e a quantidade de choques total
+    if ( sizeof( Auth::user()->diasdechoques_sala()->get() ) > 0 ) { //Verificando se existe alguma alocação
+      $disciplinas = Auth::user()->disciplina()->orderBy('turno','asc')->get();
+      $diasDeChoques_Salas = Auth::user()->diasdechoques_sala()->get();//Variável que contém os dias de choque de cada disciplina, a sala alocada e a quantidade de choques total
       $dias;//Variável que contém os dias das disciplinas em formato de array
       $diasChoques;//Variável que contém os dias de choque em formato de array
       $diasFinal;//Variável que contém os dias das disciplinas com os dias em choque em vermelho
@@ -66,7 +67,7 @@ class RelatorioController extends Controller
         $diasFinal[$i] = '';//Inicializando variável
         for ( $j = 0 ; $j < count ( $dias[$i] ) ; $j++) {//Percorrendo todos os dias de uma determinada disciplina
   				if ( isset ( $diasChocando[$j] ) ) {//Caso exista dias chocando, coloca esse dia em vermelho
-  					$diasFinal[$i] .= '<span style="color:red"><u>'.$dias[$i][$j].'</u></span> ';
+  					$diasFinal[$i] .= '<span style="color:red"><b>'.$dias[$i][$j].'</b></span> ';
   				}else{
   					$diasFinal[$i] .= ''.$dias[$i][$j].' ';
   				}

@@ -12,31 +12,30 @@ use App\Http\Controllers\Alocacao\MateriaManager;
 use App\Sala as Sala1;
 use App\Disciplina as Materia1;
 use App\DiasdeChoques_Sala;
+use Illuminate\Support\Facades\Auth;
 
 
 class AlocacaoController extends Controller
 {
   public function index()
   {
+    if ( sizeof( Auth::user()->diasdechoques_sala()->get() ) > 0 ) { //Verificando se existe alguma alocação
+      $isAlocacao = "sim";//Variável que armazena se há alocação
+      return view('admin.alocacao.index', compact('isAlocacao'));
+    }
     return view('admin.alocacao.index');
-  }
-
-  public function index2()
-  {
-    $message = "Ops! Você precisa cadastrar pelo menos uma disciplina e uma sala antes de gerar alguma alocação!";
-    return view('admin.alocacao.index', compact('message'));
   }
 
   public function gerar()
   {
-    if ( sizeof( Materia1::get() ) > 0 && sizeof( Sala1::get() ) > 0 ) { //Verificando se existe alguma sala ou disciplina
-      $disciplinas = Materia1::orderBy('turno','asc')->get();
+    if ( sizeof( Auth::user()->disciplina()->get() ) > 0 && sizeof( Auth::user()->sala()->get() ) > 0 ) { //Verificando se existe alguma sala ou disciplina
+      $disciplinas = Auth::user()->disciplina()->orderBy('turno','asc')->get();
       foreach ($disciplinas as $disciplina) {
         $disciplina1 = new Materia($disciplina->nome,$disciplina->codigo,$disciplina->professor,$disciplina->turma,$disciplina->hora,$disciplina->turno,$disciplina->dia->seg,$disciplina->dia->ter,$disciplina->dia->quar,$disciplina->dia->quin,$disciplina->dia->sex,$disciplina->dia->sab);
         MateriaManager::addMateria($disciplina1);
       }
 
-      $salas = Sala1::get();
+      $salas = Auth::user()->sala()->get();
       foreach ($salas as $sala) {
         $sala1 = new Sala($sala->nome,$sala->tipo);
         SalaManager::addSala($sala1);
@@ -70,7 +69,7 @@ class AlocacaoController extends Controller
 
         $temp *= 1 - $refrigeracao;
       }
-      DiasdeChoques_Sala::query()->delete(); // Deletando dados se alguma alocação já existe
+      DiasdeChoques_Sala::where('user_id', Auth::id())->delete(); // Deletando dados se alguma alocação já existe
       for ( $i = 0 ; $i < sizeof( $melhorSolucao->gradeSalaAlocada ) ; $i++) {
         $choquesSalas = new DiasdeChoques_Sala();
         $choquesSalas->nm_sala = $melhorSolucao->gradeSalaAlocada[$i]->__toString();
@@ -85,13 +84,12 @@ class AlocacaoController extends Controller
           }
         }
         $choquesSalas->choques = $melhorSolucao->choques();
+        $choquesSalas->user_id = Auth::id();
         $choquesSalas->save();
       }
-
-      $message2 = "Alocação gerada com sucesso!";
-      return view('admin.alocacao.index', compact('message2'));
+      return redirect()->route('alocacao')->with('success', 'Alocação gerada com sucesso!');
     }else {
-      return redirect()->route('alocacao.erro');
+      return redirect()->route('alocacao')->with('fail', 'Ops! Você precisa cadastrar pelo menos uma disciplina e uma sala antes de gerar alguma alocação!');
     }
   }
 

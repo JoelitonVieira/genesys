@@ -3,24 +3,19 @@
 @section('title', 'Ajuda')
 
 @section('content_header')
-
-    <h3 style="background-color:white;text-align:center;">Ajuda</h3><br/>
+<ol class="breadcrumb" style="float:right">
+  <li class="text-secondary"><a href="{{ route('admin.index') }}" class="text-success"><i class="fa fa-home text-success"></i>Home</a></li>
+  <li class="active text-dark" aria-current="page">Ajuda</li>
+</ol></br></br>
+<div class ="header text-center">
+      <p style="color:white; background: linear-gradient(to right, #00ab5d , #00eb7f);font-size:25px; padding:13px 0px 13px 0px;"></span>Ajuda</p><br/>
+</div>
 
 @stop
 
 @section('content')
-<div class="box">
-  
 
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="name">Seção de Ajuda</label>
-      <input type="text" id="name">
-    </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
 
-</div>
 @stop
 
 @section('js')

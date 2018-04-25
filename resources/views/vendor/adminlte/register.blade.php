@@ -9,8 +9,15 @@
 
 @section('body')
     <div class="register-box">
-        <div class="register-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+        <div class="register-logo" style="margin-bottom: 10px">
+          <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4">
+                  <b style="font-size: 25px;">destinat<b style="color:#36d56a;">io</b> &nbsp&nbsp&nbsp|&nbsp</b>
+                  <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}"><img src="https://imgur.com/eWig5zS.png" style="width: 55px; "></a>
+              </div>
+          </div>
+           <hr style="width: 330px;">
         </div>
 
         <div class="register-box-body">

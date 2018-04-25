@@ -3,8 +3,13 @@
 @section('title', 'Visualizar Relatório')
 
 @section('content_header')
-
-<div class ="header"><h1 style="color:white;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">VISUALIZAR RELATÓRIO</h1><br/></div>
+<ol class="breadcrumb" style="float:right">
+  <li class="text-secondary"><a href="{{ route('admin.index') }}" class="text-success"><i class="fa fa-home text-success"></i>Home</a></li>
+  <li class="active text-dark" aria-current="page">Relatório</li>
+</ol></br></br>
+<div class ="header text-center">
+      <p style="color:white; background: linear-gradient(to right, #00ab5d , #00eb7f);font-size:25px; padding:13px 0px 13px 0px;"></span>Visualizar Relatório</p><br/>
+</div>
 
 @stop
 
@@ -19,16 +24,16 @@
 </div>
 @else
 <div class="box-body">
-  <p><b>Data da Geração da Alocação: </b>{{ $diasDeChoques_Salas[1]->created_at->format('d/m/Y') }}</p>
+  <p><b>Data de Geração da Alocação: </b>{{ $diasDeChoques_Salas[1]->created_at->format('d/m/Y') }}</p>
   <p><b>Quantidade de choques de alocações: </b><span style="color:red">{{ $diasDeChoques_Salas[1]->choques }}</span></p>
   <p>Obs: Caso existam, os dias em vermelho e sublinhados significam que, para aquela disciplina, há choque de alocação com outra(s) disciplina(s).</p>
-  <button class="btn btn-primary" onclick="window.print()" id="botaoImprimir" style="float:right"><i class="fa fa-print"></i></button></br></br></br>
+  <a class="btn btn-success" onclick="window.print()" id="botaoImprimir" style="float:right;background-color:#00e079;border-color:#00e079"><i class="fa fa-print"></i></a></br></br></br>
   <div class="body table-responsive" >
     <table class="table table-dark table-striped table-bordered table-hover" style="margin-top: 0px; border:none;">
       <thead>
-        <tr style="background-color:#00A65A">
-          <th  scope="col" style="color:white">NOME</th>
-          <th  scope="col" style="color:white">CÓDIGO</th>
+        <tr style="background-color:#333333">
+          <th scope="col" style="color:white">NOME</th>
+          <th scope="col" style="color:white">CÓDIGO</th>
           <th scope="col" style="color:white">TURMA</th>
           <th scope="col" style="color:white">PROFESSOR</th>
           <th scope="col" style="color:white">TURNO</th>

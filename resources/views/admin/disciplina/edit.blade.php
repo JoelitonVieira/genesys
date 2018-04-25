@@ -3,24 +3,27 @@
 @section('title', 'Alteração de Disciplina')
 
 @section('content_header')
-
-<div class ="header"><h1 style="color:WHITE;background-color:#00A65A;text-align:center;font-size:200%;padding:6px;">DISCIPLINAS</h1><br/></div>
+<ol class="breadcrumb" style="float:right">
+  <li class="text-secondary"><a href="{{ route('admin.index') }}" class="text-success"><i class="fa fa-home text-success"></i>Home</a></li>
+  <li class="text-secondary"><a href="{{ route('disciplina.index') }}" class="text-success">Disciplina</a></li>
+  <li class="active text-dark" aria-current="page">Editar Disciplina</li>
+</ol></br></br>
+<div class ="header text-center">
+      <p style="color:white; background: linear-gradient(to right, #00ab5d , #00eb7f);font-size:25px; padding:13px 0px 13px 0px;"></span>Editar Disciplina</p><br/>
+</div>
 
 @stop
 
 @section('content')
 
 <div class="row">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="header">
-      <h4 class="pageHeader">ALTERAR DISCIPLINA</h4>
-    </div>
+  <div class="col-md-3">
     <form action="{{action('DisciplinaController@update', $disciplina->id)}}" method="POST" >
     {{ csrf_field() }}
     {{ method_field('PUT')}}
       <div class="box-body">
         <div class="form-group has-feedback {{ $errors->has('nome') ? 'has-error' : '' }}">
-          <label for="name">Nome:</label></br>
+          <p for="name" style="color:#141414;">Nome</p>
           <input type="text" name="nome" value="{{$disciplina->nome}}" class="form-control">
           @if ($errors->has('nome'))
             <span class="help-block">
@@ -29,7 +32,7 @@
           @endif
         </div>
         <div class="form-group has-feedback {{ $errors->has('codigo') ? 'has-error' : '' }}">
-          <label for="name">Código:</label></br>
+          <p for="name" style="color:#141414;">Código</p>
           <input type="text" name="codigo" value="{{$disciplina->codigo}}" class="form-control">
           @if ($errors->has('codigo'))
             <span class="help-block">
@@ -38,7 +41,7 @@
           @endif
         </div>
         <div class="form-group has-feedback {{ $errors->has('turma') ? 'has-error' : '' }}">
-          <label for="name">Turma:</label></br>
+          <p for="name" style="color:#141414;">Turma</p>
           <input type="text" name="turma" value="{{$disciplina->turma}}" class="form-control">
           @if ($errors->has('turma'))
             <span class="help-block">
@@ -47,7 +50,7 @@
           @endif
         </div>
         <div class="form-group has-feedback {{ $errors->has('professor') ? 'has-error' : '' }}">
-          <label for="name">Professor:</label></br>
+          <p for="name" style="color:#141414;">Professor</p>
           <input type="text" name="professor" value="{{$disciplina->professor}}" class="form-control">
           @if ($errors->has('professor'))
             <span class="help-block">
@@ -56,7 +59,7 @@
           @endif
         </div>
         <div class="form-group">
-          <label for="name">Turno:</label></br>
+          <p for="name" style="color:#141414;">Turno</p>
           <select class="selectpicker" name="turno">
             <option value="Matutino"  class="optionSelect" selected="selected">Matutino</option>
             <option value="Vespertino" class="optionSelect" <?php if ($disciplina->turno == "vespertino") { echo 'selected="selected"'; } ?>>Vespertino</option>
@@ -64,7 +67,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="name">Hórario:</label></br>
+          <p for="name" style="color:#141414;">Hórario</p>
           <select class="selectpicker" name="horario">
             <option value="primeiro" class="optionSelect" selected="selected">1º</option>
             <option value="segundo" class="optionSelect" <?php if ($disciplina->horario == "segundo") { echo 'selected="selected"'; } ?>>2º</option>
@@ -75,7 +78,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="name">Dias:</label></br>
+          <p for="name" style="color:#141414;">Dias</p>
           <select class="selectpicker" multiple="multiple" name="dia[]">
             <option value="seg" class="optionSelect" <?php if ($disciplina->dia->seg == "1") { echo 'selected="selected"'; } ?>>Segunda</option>
             <option value="ter" class="optionSelect" <?php if ($disciplina->dia->ter == "1") { echo 'selected="selected"'; } ?>>Terça</option>
@@ -85,9 +88,18 @@
             <option value="sab" class="optionSelect" <?php if ($disciplina->dia->sab == "1") { echo 'selected="selected"'; } ?>>Sábado</option>
           </select>
         </div>
-        <button class="buttonSalvar"><span>SALVAR</span></button>
+        <button class="buttonSalvar" style="background-color:#00e77d;"><span>SALVAR</span></button>
       </div>
     </form>
+  </div>
+
+  <div class="col-md-7">
+  </div>
+
+  <div class="col-md-2">
+    <br><br>
+    <i class="fa fa-edit" style="font-size:80px;color:#00e77d;"></i>
+  </div>
   </div>
 </div>
 

@@ -7,18 +7,36 @@ use App\Http\Controllers\Controller;
 use App\Disciplina;
 use App\Dia;
 use App\Http\Requests\StoreDisciplina;
+use Validator;
+use Illuminate\Support\Facades\Auth;
 
 class DisciplinaController extends Controller
 {
   public function index()
   {
-      $disciplinas = Disciplina::latest()->paginate(5);
-      return view('admin.disciplina.index', compact('disciplinas'))
+      $disciplinas = Auth::user()->disciplina()->latest()->paginate(5);
+      $countDisciplinas = sizeof( Auth::user()->disciplina()->get() );
+      return view('admin.disciplina.index', compact('disciplinas', 'countDisciplinas'))
       ->with('i', (request()->input('page', 1) - 1) * 5);
   }
 
+  public function create(){
+    return view('admin.disciplina.create');
+  }
+
+  public function show(Disciplina $disciplina) {
+        return view('admin.disciplina.show', compact('disciplina'));
+    }
+
   public function store(StoreDisciplina $request){
-    $disciplina = Disciplina::create($request->all());
+    $disciplina = Auth::user()->disciplina()->create([
+      'nome' => $request->nome,
+      'codigo' => $request->codigo,
+      'turma' => $request->turma,
+      'turno' => $request->turno,
+      'professor' => $request->professor,
+      'horario' => $request->horario,
+      ]) ;
     $dias = new Dia();
     foreach ($request->dia as $dia) {
       if ($dia == "seg") { $dias->seg = 1; }
@@ -33,17 +51,20 @@ class DisciplinaController extends Controller
     return redirect()->route('disciplina.index')->with('success','Disciplina Cadastrada com Sucesso!');
   }
 
-  public function show(Disciplina $disciplina) {
-        return view('admin.disciplina.show', compact('disciplina'));
-    }
-
   public function edit(Disciplina $disciplina) {
       return view('admin.disciplina.edit', compact('disciplina'));
   }
 
   public function update(StoreDisciplina $request, $id) {
     $disciplina = Disciplina::find($id);
-    $disciplina->update($request->all());
+
+    $disciplina->nome = $request->nome;
+    $disciplina->codigo = $request->codigo;
+    $disciplina->turma = $request->turma;
+    $disciplina->turno = $request->turno;
+    $disciplina->professor = $request->professor;
+    $disciplina->horario = $request->horario;
+    $disciplina->save();
     $dias = $disciplina->dia;
     $dias->seg = 0;
     $dias->ter = 0;
@@ -68,5 +89,22 @@ class DisciplinaController extends Controller
       $disciplina->dia()->delete();
       $disciplina->delete();
       return redirect()->route('disciplina.index')->with('success','Disciplina Deletada com Sucesso!');
+  }
+
+  public function search(Request $request){
+    $validator = Validator::make($request->all(), [
+        'pesquisa' => 'required',
+    ]);
+    if ($validator->fails()) {
+          return redirect()->route('disciplina.index')
+                      ->withErrors($validator)
+                      ->withInput();
+    }
+    $disciplinas = Disciplina::where(''.$request->modo.'', 'like', '%'.$request->pesquisa.'%')->where('user_id', Auth::id())->paginate(5);
+    $countDisciplinas = sizeof( Auth::user()->disciplina()->where(''.$request->modo.'', 'like', '%'.$request->pesquisa.'%')->get() );
+    $request->flash();
+    $dataform = $request->except('_token');
+    return view('admin.disciplina.index', compact('disciplinas', 'dataform', 'countDisciplinas'))
+    ->with('i', (request()->input('page', 1) - 1) * 5);
   }
 }

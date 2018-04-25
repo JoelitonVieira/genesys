@@ -290,6 +290,8 @@
     </head>
     <body>
 
+      
+
     <div id="particles-js"></div>
         <div id="box1">
             @if (Route::has('login'))

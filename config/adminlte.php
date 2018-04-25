@@ -117,7 +117,7 @@ return [
         [
             'text'        => 'Cadastro de Disciplina',
             'url'         => 'disciplina',
-            'icon'        => 'bookmark',
+            'icon'        => 'graduation-cap',
         ],
         [
             'text'        => 'Cadastro de Sala/Laboratório',
@@ -127,7 +127,7 @@ return [
         'ALOCAÇÃO',
         [
             'text'        => 'Gerar Alocação',
-            'url'         => 'alocacao.index',
+            'url'         => 'alocacao',
             'icon'        => 'mouse-pointer',
         ],
         [

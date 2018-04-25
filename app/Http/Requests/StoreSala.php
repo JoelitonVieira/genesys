@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreSala extends FormRequest
 {
@@ -23,7 +24,7 @@ class StoreSala extends FormRequest
      public function rules()
      {
        return [
-           'nome' => 'required|unique:salas,nome,'.$this->sala,
+           'nome' => 'required|unique:salas,nome,'.$this->sala.',id,user_id,'.Auth::id(),
        ];
      }
 

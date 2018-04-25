@@ -7,20 +7,28 @@ use App\Http\Controllers\Controller;
 use App\Sala;
 use App\Http\Requests\StoreSala;
 use Validator;
-
+use Illuminate\Support\Facades\Auth;
 
 
 class SalaController extends Controller
 {
   public function index()
   {
-      $salas = Sala::latest()->paginate(5);
-      return view('admin.sala.index', compact('salas'))
+      $salas = Auth::user()->sala()->latest()->paginate(5);
+      $countSalas = sizeof( Auth::user()->sala()->get() );
+      return view('admin.sala.index', compact('salas', 'countSalas'))
       ->with('i', (request()->input('page', 1) - 1) * 5);
   }
 
+  public function create(){
+    return view('admin.sala.create');
+  }
+
   public function store(StoreSala $request){
-    Sala::create($request->all());
+    $salas = Auth::user()->sala()->create([
+      'nome' => $request->nome,
+      'tipo' => $request->tipo,
+      ]) ;
     return redirect()->route('sala.index')->with('success','Sala Cadastrada Com Sucesso!');
   }
 
@@ -30,7 +38,9 @@ class SalaController extends Controller
 
   public function update(StoreSala $request, $id) {
       $sala = Sala::find($id);
-      $sala->update($request->all());
+      $sala->nome = $request->nome;
+      $sala->tipo = $request->tipo;
+      $sala->save();
       return redirect()->route('sala.index')->with('success','Sala Atualizada com Sucesso!');
   }
 
@@ -49,14 +59,12 @@ class SalaController extends Controller
                         ->withErrors($validator)
                         ->withInput();
       }
-      if ( $request->modo == "nome" )  {
-        $salas = Sala::where('nome', 'like', '%'.$request->pesquisa.'%')->paginate(5);
-      } else {
-        $salas = Sala::where('tipo', 'like', '%'.$request->pesquisa.'%')->paginate(5);
-      }
+
+      $salas = Sala::where(''.$request->modo.'', 'like', '%'.$request->pesquisa.'%')->where('user_id', Auth::id())->paginate(5);
+      $countSalas = sizeof( Auth::user()->sala()->where(''.$request->modo.'', 'like', '%'.$request->pesquisa.'%')->get() );
       $request->flash();
       $dataform = $request->except('_token');
-      return view('admin.sala.index', compact('salas', 'dataform'))
+      return view('admin.sala.index', compact('salas', 'dataform', 'countSalas'))
       ->with('i', (request()->input('page', 1) - 1) * 5);
   }
 }

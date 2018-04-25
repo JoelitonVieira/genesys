@@ -9,7 +9,7 @@
   #botaoImprimir {
   display:none
   }
-    
+
 }
 /*Classe dos títulos das páginas*/
 .pageHeader{
@@ -73,14 +73,10 @@ right: 1;
 }
 /* Entrada de texto */
 input[type=text]{
-  width:20%;
-  border:1.5px solid 	#000000;
-  border-radius:4px;
-  margin:8px 0;
-  outline:none;
-  padding:3px;
-  box-sizing:border-box;
-  transition:.3s;
+  margin-top:0px;
+  border:none;
+  border-bottom: 1px solid #00A65A;
+  border-radius: 0px;
 
 input[type=text]:focus{
   border-color:dodgerBlue;
