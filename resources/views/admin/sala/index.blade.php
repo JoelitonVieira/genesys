@@ -1,13 +1,16 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Cadastro de Salas e Laboratórios')
+@section('title', 'Salas e Laboratórios')
 
 @section('content_header')
 <ol class="breadcrumb" style="float:right">
   <li class="text-secondary"><a href="{{ route('admin.index') }}" class="text-success"><i class="fa fa-home text-success"></i>Home</a></li>
   <li class="active text-dark" aria-current="page">Sala</li>
-</ol></br>
+</ol></br></br>
+<div class ="header text-center">
+      <p style="color:white; background: linear-gradient(to right, #00ab5d , #00eb7f);font-size:25px; padding:13px 0px 13px 0px;">Salas/Laboratórios Existentes</p><br/><br/><br/>
+</div>
 @stop
 
 @section('content')
@@ -19,13 +22,6 @@
   <p>{{ $message }}</p>
 </div>
 @endif
-
-<a class="btn btn-primary" href="{{ route('sala.create') }}"><span>CADASTRAR SALA</span></a>
-</br></br>
-
-<div class ="header text-center">
-      <p style="color:white; background: linear-gradient(to right, #00ab5d , #00eb7f);font-size:25px; padding:13px 0px 13px 0px;">Salas/Laboratórios Existentes</p><br/><br/><br/>
-</div>
 
 <form action="{{action('SalaController@search')}}" method="POST">
       {{ csrf_field() }}
@@ -61,7 +57,9 @@
         </div>
     </div>
     <br>
-    <button class="buttonSalvar" style="border-radius: 0px;background-color:#00A65A;"><span>PESQUISAR</span></button>
+    <button class="buttonSalvar" style="border-radius: 0px;background-color:#00A65A;"><span>PESQUISAR</span></button><br />
+    <a class="btn btn-primary" href="{{ route('sala.create') }}" style="border-radius: 0px;background-color:transparent; color: #00A65A; border: 2px solid #00A65A;"><span>CADASTRAR SALA</span></a>
+
 </form>
 
 </br>

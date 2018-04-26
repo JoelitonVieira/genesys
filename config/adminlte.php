@@ -115,12 +115,12 @@ return [
         ],
         'DADOS',
         [
-            'text'        => 'Cadastro de Disciplina',
+            'text'        => 'Disciplinas',
             'url'         => 'disciplina',
             'icon'        => 'graduation-cap',
         ],
         [
-            'text'        => 'Cadastro de Sala/Laboratório',
+            'text'        => 'Salas e Laboratórios',
             'url'         => 'sala',
             'icon'        => 'edit',
         ],

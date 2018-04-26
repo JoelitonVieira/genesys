@@ -5,7 +5,7 @@
 @section('content_header')
 <ol class="breadcrumb" style="float:right">
   <li class="text-secondary"><a href="{{ route('admin.index') }}" class="text-success"><i class="fa fa-home text-success"></i>Home</a></li>
-  <li class="text-secondary"><a href="{{ route('disciplina.index') }}" class="text-success">Disciplina</a></li>
+  <li class="text-secondary"><a href="{{ route('disciplina.index') }}" class="text-success">Disciplinas</a></li>
   <li class="active text-dark" aria-current="page">Editar Disciplina</li>
 </ol></br></br>
 <div class ="header text-center">
